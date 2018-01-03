@@ -18,6 +18,7 @@ public class MainApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		UserService userService = context.getBean(UserService.class);
+		// UserController userController = context.getBean(UserController.class);
 
 		// Add Users
 		userService.add(new User("Sunil", "Bora", "suni.bora@example.com"));
@@ -34,6 +35,8 @@ public class MainApp {
 			System.out.println("Email = " + user.getEmail());
 			System.out.println();
 		}
+
+		// userController.getDrivers();
 
 		context.close();
 	}
