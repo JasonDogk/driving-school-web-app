@@ -15,6 +15,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import driving.school.web.app.entity.User;
 
@@ -23,10 +24,11 @@ import driving.school.web.app.entity.User;
  *
  */
 @Configuration
+@EnableWebMvc
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScans(value = { @ComponentScan("driving.school.web.app.dao"),
-		@ComponentScan("driving.school.web.app.service") })
+		@ComponentScan("driving.school.web.app.service"), @ComponentScan("driving.school.web.app.controller") })
 public class AppConfig {
 
 	@Autowired
