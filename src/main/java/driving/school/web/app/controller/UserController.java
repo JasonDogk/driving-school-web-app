@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.User;
@@ -20,11 +18,11 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public List<User> getDrivers() {
-		List<User> drivers = userService.listUsers();
-		return drivers;
-	}
+	// @RequestMapping(method = RequestMethod.GET)
+	// public List<User> getDrivers() {
+	// List<User> drivers = userService.listUsers();
+	// return drivers;
+	// }
 
 	@GetMapping("/persons")
 	public ResponseEntity getPersons() {
