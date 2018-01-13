@@ -46,7 +46,19 @@ public class MapDetails {
 		private String longtitude;
 		private String latitude;
 
-		public Builder() {
+		public Builder id(String id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder longtitude(String longtitude) {
+			this.longtitude = longtitude;
+			return this;
+		}
+
+		public Builder latitude(String latitude) {
+			this.latitude = latitude;
+			return this;
 		}
 
 		public MapDetails build() {

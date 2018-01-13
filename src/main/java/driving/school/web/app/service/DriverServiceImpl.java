@@ -26,4 +26,20 @@ public class DriverServiceImpl implements DriverService {
 		return driverDao.getDriverById(driverId);
 	}
 
+	@Override
+	public Driver createDriver(Driver driver) {
+		return driverDao.createDriver(driver);
+	}
+
+	@Override
+	public Driver updateDriver(Driver driver) {
+		return driverDao.updateDriver(driver);
+	}
+
+	@Override
+	public Void deleteDriver(String driverId) {
+		driverDao.deleteDriver(driverId);
+		return null;
+	}
+
 }

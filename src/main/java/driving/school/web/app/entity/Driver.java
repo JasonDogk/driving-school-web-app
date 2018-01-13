@@ -87,6 +87,8 @@ public class Driver {
 		this.address = builder.address;
 		this.number = builder.number;
 		this.notes = builder.notes;
+		this.nant = builder.nant;
+		this.email = builder.email;
 	}
 
 	public String getId() {
@@ -197,7 +199,99 @@ public class Driver {
 		private String email;
 		private String notes;
 
-		public Builder() {
+		public Builder id(String id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder firstName(String firstName) {
+			this.firstName = firstName;
+			return this;
+		}
+
+		public Builder lastName(String lastName) {
+			this.lastName = lastName;
+			return this;
+		}
+
+		public Builder fathersName(String fathersName) {
+			this.fathersName = fathersName;
+			return this;
+		}
+
+		public Builder afm(String afm) {
+			this.afm = afm;
+			return this;
+		}
+
+		public Builder protocolNumber(String protocolNumber) {
+			this.protocolNumber = protocolNumber;
+			return this;
+		}
+
+		public Builder phoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+			return this;
+		}
+
+		public Builder identificationCardNumber(String identificationCardNumber) {
+			this.identificationCardNumber = identificationCardNumber;
+			return this;
+		}
+
+		public Builder dateOfCreation(String dateOfCreation) {
+			this.dateOfCreation = dateOfCreation;
+			return this;
+		}
+
+		public Builder timeOfCreation(String timeOfCreation) {
+			this.timeOfCreation = timeOfCreation;
+			return this;
+		}
+
+		public Builder licenseExpirationDate(String licenseExpirationDate) {
+			this.licenseExpirationDate = licenseExpirationDate;
+			return this;
+		}
+
+		public Builder gender(String gender) {
+			this.gender = gender;
+			return this;
+		}
+
+		public Builder photo(String photo) {
+			this.photo = photo;
+			return this;
+		}
+
+		public Builder residence(String residence) {
+			this.residence = residence;
+			return this;
+		}
+
+		public Builder address(String address) {
+			this.address = address;
+			return this;
+		}
+
+		public Builder number(String number) {
+			this.number = number;
+			return this;
+		}
+
+		public Builder nant(String nant) {
+			this.nant = nant;
+			return this;
+		}
+
+		public Builder email(String email) {
+			this.email = email;
+			return this;
+		}
+
+		public Builder notes(String notes) {
+			this.notes = notes;
+			return this;
 		}
 
 		public Driver build() {
@@ -205,5 +299,4 @@ public class Driver {
 			return driver;
 		}
 	}
-
 }
