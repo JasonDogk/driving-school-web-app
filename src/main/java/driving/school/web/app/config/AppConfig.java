@@ -17,7 +17,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import driving.school.web.app.entity.Driver;
-import driving.school.web.app.entity.User;
+import driving.school.web.app.entity.License;
 
 /**
  * @author imssbora
@@ -54,7 +54,7 @@ public class AppConfig {
 		props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
 		factoryBean.setHibernateProperties(props);
-		factoryBean.setAnnotatedClasses(User.class);
+		factoryBean.setAnnotatedClasses(License.class);
 		factoryBean.setAnnotatedClasses(Driver.class);
 		return factoryBean;
 	}

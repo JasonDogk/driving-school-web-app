@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import driving.school.web.app.config.AppConfig;
 import driving.school.web.app.entity.AdministrationTable;
 import driving.school.web.app.service.DriverService;
+import driving.school.web.app.service.LicenseService;
 
 /**
  * @author imssbora
@@ -15,7 +16,7 @@ public class MainApp {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		// UserService userService = context.getBean(UserService.class);
+		LicenseService userService = context.getBean(LicenseService.class);
 		DriverService driverService = context.getBean(DriverService.class);
 
 		// Add Users
@@ -58,7 +59,8 @@ public class MainApp {
 
 		context.close();
 
-		AdministrationTable adminTable = new AdministrationTable.Builder("id", "username", "password").build();
+		AdministrationTable adminTable = new AdministrationTable.Builder().id("id").username("username")
+				.password("password").build();
 		System.err.println(adminTable.toString());
 	}
 }

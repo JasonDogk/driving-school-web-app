@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "driver_licenses")
-public class DriverLicenses {
+public class License {
 
 	@Id
 	private String id;
@@ -186,7 +186,7 @@ public class DriverLicenses {
 	@Column(name = "de_finished_date")
 	private String deFinishedDate;
 
-	private DriverLicenses(Builder builder) {
+	private License(Builder builder) {
 		this.id = builder.id;
 		this.am = builder.am;
 		this.amDate = builder.amDate;
@@ -535,6 +535,7 @@ public class DriverLicenses {
 		private String c1;
 		private String c1Date;
 		private String c1Finished;
+		private String c1FinishedDate;
 		private String c;
 		private String cDate;
 		private String cFinished;
@@ -568,11 +569,308 @@ public class DriverLicenses {
 		private String deFinished;
 		private String deFinishedDate;
 
-		public Builder() {
+		public Builder id(String id) {
+			this.id = id;
+			return this;
 		}
 
-		public DriverLicenses build() {
-			DriverLicenses driverLicenses = new DriverLicenses(this);
+		public Builder am(String am) {
+			this.am = am;
+			return this;
+		}
+
+		public Builder amDate(String amDate) {
+			this.amDate = amDate;
+			return this;
+		}
+
+		public Builder amFinished(String amFinished) {
+			this.amFinished = amFinished;
+			return this;
+		}
+
+		public Builder a1(String a1) {
+			this.a1 = a1;
+			return this;
+		}
+
+		public Builder a1Date(String a1Date) {
+			this.a1Date = a1Date;
+			return this;
+		}
+
+		public Builder a1Finished(String a1Finished) {
+			this.a1Finished = a1Finished;
+			return this;
+		}
+
+		public Builder a1FinishedDate(String a1FinishedDate) {
+			this.a1FinishedDate = a1FinishedDate;
+			return this;
+		}
+
+		public Builder a2(String a2) {
+			this.a2 = a2;
+			return this;
+		}
+
+		public Builder a2Date(String a2Date) {
+			this.a2Date = a2Date;
+			return this;
+		}
+
+		public Builder a2Finished(String a2Finished) {
+			this.a2Finished = a2Finished;
+			return this;
+		}
+
+		public Builder a2FinishedDate(String a2FinishedDate) {
+			this.a2FinishedDate = a2FinishedDate;
+			return this;
+		}
+
+		public Builder a(String a) {
+			this.a = a;
+			return this;
+		}
+
+		public Builder aDate(String aDate) {
+			this.aDate = aDate;
+			return this;
+		}
+
+		public Builder aFinished(String aFinished) {
+			this.aFinished = aFinished;
+			return this;
+		}
+
+		public Builder aFinishedDate(String aFinishedDate) {
+			this.aFinishedDate = aFinishedDate;
+			return this;
+		}
+
+		public Builder b1(String b1) {
+			this.b1 = b1;
+			return this;
+		}
+
+		public Builder b1Date(String b1Date) {
+			this.b1Date = b1Date;
+			return this;
+		}
+
+		public Builder b1Finished(String b1Finished) {
+			this.b1Finished = b1Finished;
+			return this;
+		}
+
+		public Builder b1FinishedDate(String b1FinishedDate) {
+			this.b1FinishedDate = b1FinishedDate;
+			return this;
+		}
+
+		public Builder b(String b) {
+			this.b = b;
+			return this;
+		}
+
+		public Builder bDate(String bDate) {
+			this.bDate = bDate;
+			return this;
+		}
+
+		public Builder bFinished(String bFinished) {
+			this.bFinished = bFinished;
+			return this;
+		}
+
+		public Builder bFinishedDate(String bFinishedDate) {
+			this.bFinishedDate = bFinishedDate;
+			return this;
+		}
+
+		public Builder c1(String c1) {
+			this.c1 = c1;
+			return this;
+		}
+
+		public Builder c1Date(String c1Date) {
+			this.c1Date = c1Date;
+			return this;
+		}
+
+		public Builder c1Finished(String c1Finished) {
+			this.c1Finished = c1Finished;
+			return this;
+		}
+
+		public Builder c1FinishedDate(String c1FinishedDate) {
+			this.c1FinishedDate = c1FinishedDate;
+			return this;
+		}
+
+		public Builder c(String c) {
+			this.c = c;
+			return this;
+		}
+
+		public Builder cDate(String cDate) {
+			this.cDate = cDate;
+			return this;
+		}
+
+		public Builder cFinished(String cFinished) {
+			this.cFinished = cFinished;
+			return this;
+		}
+
+		public Builder cFinishedDate(String cFinishedDate) {
+			this.cFinishedDate = cFinishedDate;
+			return this;
+		}
+
+		public Builder d1(String d1) {
+			this.d1 = d1;
+			return this;
+		}
+
+		public Builder d1Date(String d1Date) {
+			this.d1Date = d1Date;
+			return this;
+		}
+
+		public Builder d1Finished(String d1Finished) {
+			this.d1Finished = d1Finished;
+			return this;
+		}
+
+		public Builder d1FinishedFate(String d1FinishedFate) {
+			this.d1FinishedFate = d1FinishedFate;
+			return this;
+		}
+
+		public Builder d(String d) {
+			this.d = d;
+			return this;
+		}
+
+		public Builder dDate(String dDate) {
+			this.dDate = dDate;
+			return this;
+		}
+
+		public Builder dFinished(String dFinished) {
+			this.dFinished = dFinished;
+			return this;
+		}
+
+		public Builder dFinishedDate(String dFinishedDate) {
+			this.dFinishedDate = dFinishedDate;
+			return this;
+		}
+
+		public Builder be(String be) {
+			this.be = be;
+			return this;
+		}
+
+		public Builder beDate(String beDate) {
+			this.beDate = beDate;
+			return this;
+		}
+
+		public Builder beFinished(String beFinished) {
+			this.beFinished = beFinished;
+			return this;
+		}
+
+		public Builder beFinishedDate(String beFinishedDate) {
+			this.beFinishedDate = beFinishedDate;
+			return this;
+		}
+
+		public Builder c1e(String c1e) {
+			this.c1e = c1e;
+			return this;
+		}
+
+		public Builder c1eDate(String c1eDate) {
+			this.c1eDate = c1eDate;
+			return this;
+		}
+
+		public Builder c1eFinished(String c1eFinished) {
+			this.c1eFinished = c1eFinished;
+			return this;
+		}
+
+		public Builder c1eFinishedDate(String c1eFinishedDate) {
+			this.c1eFinishedDate = c1eFinishedDate;
+			return this;
+		}
+
+		public Builder ce(String ce) {
+			this.ce = ce;
+			return this;
+		}
+
+		public Builder ceDate(String ceDate) {
+			this.ceDate = ceDate;
+			return this;
+		}
+
+		public Builder ceFinished(String ceFinished) {
+			this.ceFinished = ceFinished;
+			return this;
+		}
+
+		public Builder ceFinishedDate(String ceFinishedDate) {
+			this.ceFinishedDate = ceFinishedDate;
+			return this;
+		}
+
+		public Builder d1e(String d1e) {
+			this.d1e = d1e;
+			return this;
+		}
+
+		public Builder d1eDate(String d1eDate) {
+			this.d1eDate = d1eDate;
+			return this;
+		}
+
+		public Builder d1eFinished(String d1eFinished) {
+			this.d1eFinished = d1eFinished;
+			return this;
+		}
+
+		public Builder d1eFinishedDate(String d1eFinishedDate) {
+			this.d1eFinishedDate = d1eFinishedDate;
+			return this;
+		}
+
+		public Builder de(String de) {
+			this.de = de;
+			return this;
+		}
+
+		public Builder deDate(String deDate) {
+			this.deDate = deDate;
+			return this;
+		}
+
+		public Builder deFinished(String deFinished) {
+			this.deFinished = deFinished;
+			return this;
+		}
+
+		public Builder deFinishedDate(String deFinishedDate) {
+			this.deFinishedDate = deFinishedDate;
+			return this;
+		}
+
+		public License build() {
+			License driverLicenses = new License(this);
 			return driverLicenses;
 		}
 

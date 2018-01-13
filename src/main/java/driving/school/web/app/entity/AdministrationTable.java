@@ -61,10 +61,19 @@ public class AdministrationTable {
 		// return this;
 		// }
 
-		public Builder(String id, String username, String password) {
+		public Builder id(String id) {
 			this.id = id;
+			return this;
+		}
+
+		public Builder username(String username) {
 			this.username = username;
+			return this;
+		}
+
+		public Builder password(String password) {
 			this.password = password;
+			return this;
 		}
 
 		public AdministrationTable build() {
