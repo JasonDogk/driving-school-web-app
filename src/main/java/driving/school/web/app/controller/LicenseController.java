@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.License;
-import driving.school.web.app.exceptions.DriverNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
+import driving.school.web.app.exceptions.LicenseNotFoundException;
+import driving.school.web.app.exceptions.MissingRequiredParamsException;
 import driving.school.web.app.service.LicenseService;
 
 @RestController
@@ -38,9 +39,6 @@ public class LicenseController {
 		} catch (EmptyObjectException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (DriverNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		return null;
 
@@ -53,7 +51,7 @@ public class LicenseController {
 		} catch (EmptyObjectException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (DriverNotFoundException e) {
+		} catch (MissingRequiredParamsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -65,7 +63,10 @@ public class LicenseController {
 	public Void updateLicense(@PathVariable String licenseId) {
 		try {
 			licenseService.deleteLicense(licenseId);
-		} catch (DriverNotFoundException e) {
+		} catch (EmptyObjectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LicenseNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
