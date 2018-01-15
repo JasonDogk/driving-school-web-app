@@ -13,7 +13,7 @@ public class Driver {
 	private String id;
 
 	@Column(name = "first_name")
-	private String fistrName;
+	private String firstName;
 
 	@Column(name = "last_name")
 	private String lastName;
@@ -71,7 +71,7 @@ public class Driver {
 
 	private Driver(Builder builder) {
 		this.id = builder.id;
-		this.fistrName = builder.firstName;
+		this.firstName = builder.firstName;
 		this.fathersName = builder.fathersName;
 		this.lastName = builder.lastName;
 		this.afm = builder.afm;
@@ -91,12 +91,21 @@ public class Driver {
 		this.email = builder.email;
 	}
 
+	public Builder toBuilder() {
+		return new Builder().firstName(getFistrName()).lastName(getLastName()).fathersName(getFathersName())
+				.afm(getAfm()).protocolNumber(getProtocolNumber()).phoneNumber(getPhoneNumber())
+				.identificationCardNumber(getIdentificationCardNumber()).dateOfCreation(getDateOfCreation())
+				.timeOfCreation(getTimeOfCreation()).licenseExpirationDate(getLicenseExpirationDate())
+				.gender(getGender()).photo(getPhoto()).residence(getResidence()).address(getAddress())
+				.number(getNumber()).notes(getNotes()).nant(getNant()).email(getEmail());
+	}
+
 	public String getId() {
 		return id;
 	}
 
 	public String getFistrName() {
-		return fistrName;
+		return firstName;
 	}
 
 	public String getLastName() {
@@ -169,7 +178,7 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver [id=" + id + ", fistrName=" + fistrName + ", lastName=" + lastName + ", fathersName="
+		return "Driver [id=" + id + ", fistrName=" + firstName + ", lastName=" + lastName + ", fathersName="
 				+ fathersName + ", afm=" + afm + ", protocolNumber=" + protocolNumber + ", phoneNumber=" + phoneNumber
 				+ ", identificationCardNumber=" + identificationCardNumber + ", dateOfCreation=" + dateOfCreation
 				+ ", timeOfCreation=" + timeOfCreation + ", licenseExpirationDate=" + licenseExpirationDate

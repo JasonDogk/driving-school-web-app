@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.License;
+import driving.school.web.app.exceptions.DriverNotFoundException;
+import driving.school.web.app.exceptions.EmptyObjectException;
 import driving.school.web.app.service.LicenseService;
 
 @RestController
@@ -19,27 +21,54 @@ public class LicenseController {
 	@RequestMapping(value = "/driver/{licenseId}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public License getLicense(@PathVariable String licenseId) {
 
-		License license = licenseService.getLicense(licenseId);
-		return license;
+		try {
+			License license = licenseService.getLicense(licenseId);
+			return license;
+		} catch (EmptyObjectException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@RequestMapping(value = "/license", method = RequestMethod.POST, headers = "Accept=application/json")
 	public License createLicense(@RequestBody License license) {
-		license = licenseService.createLicense(license);
-		return license;
+		try {
+			license = licenseService.createLicense(license);
+			return license;
+		} catch (EmptyObjectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DriverNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 
 	}
 
 	@RequestMapping(value = "/license", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public License updateLicense(@RequestBody License license) {
-		license = licenseService.updateLicense(license);
+		try {
+			license = licenseService.updateLicense(license);
+		} catch (EmptyObjectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DriverNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return license;
 
 	}
 
 	@RequestMapping(value = "/license/{licenseId}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public Void updateLicense(@PathVariable String licenseId) {
-		licenseService.deleteLicense(licenseId);
+		try {
+			licenseService.deleteLicense(licenseId);
+		} catch (DriverNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

@@ -5,7 +5,7 @@ import java.util.List;
 import driving.school.web.app.entity.Driver;
 
 public interface DriverDao {
-	List<Driver> listDrivers();
+	List<Driver> getDrivers();
 
 	Driver getDriverById(String driverId);
 
@@ -13,5 +13,5 @@ public interface DriverDao {
 
 	Driver updateDriver(Driver driver);
 
-	Void deleteDriver(String driverId);
+	String deleteDriver(String driverId);
 }

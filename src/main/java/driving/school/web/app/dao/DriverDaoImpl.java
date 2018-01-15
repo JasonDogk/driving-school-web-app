@@ -21,7 +21,7 @@ public class DriverDaoImpl implements DriverDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<Driver> listDrivers() {
+	public List<Driver> getDrivers() {
 		@SuppressWarnings("unchecked")
 		TypedQuery<Driver> query = sessionFactory.getCurrentSession().createQuery("from Driver");
 		return query.getResultList();
@@ -29,11 +29,18 @@ public class DriverDaoImpl implements DriverDao {
 
 	@Override
 	public Driver getDriverById(String driverId) {
-		@SuppressWarnings("unchecked")
-		TypedQuery<Driver> query = sessionFactory.getCurrentSession()
-				.createQuery("from Driver d WHERE d.id = :driverId");
-		query.setParameter("driverId", driverId);
-		return query.getSingleResult();
+
+		try {
+			@SuppressWarnings("unchecked")
+			TypedQuery<Driver> query = sessionFactory.getCurrentSession()
+					.createQuery("from Driver d WHERE d.id = :driverId");
+			query.setParameter("driverId", driverId);
+			return query.getSingleResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 
 	@Override
@@ -58,7 +65,7 @@ public class DriverDaoImpl implements DriverDao {
 			}
 		}
 
-		return driver;
+		return getDriverById(driver.getId());
 	}
 
 	@Override
@@ -83,13 +90,14 @@ public class DriverDaoImpl implements DriverDao {
 			}
 		}
 
-		return driver;
+		return getDriverById(driver.getId());
 	}
 
 	@Override
-	public Void deleteDriver(String driverId) {
+	public String deleteDriver(String driverId) {
 		Session session = null;
 		Transaction transaction = null;
+		String deletedDriverId = null;
 		try {
 			Driver driver = new Driver.Builder().id(driverId).build();
 
@@ -98,6 +106,7 @@ public class DriverDaoImpl implements DriverDao {
 			transaction.begin();
 			session.delete(driver);
 			transaction.commit();
+			deletedDriverId = driverId;
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -108,7 +117,7 @@ public class DriverDaoImpl implements DriverDao {
 				session.close();
 			}
 		}
-		return null;
+		return deletedDriverId;
 	}
 
 }

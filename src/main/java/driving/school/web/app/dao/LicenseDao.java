@@ -9,5 +9,5 @@ public interface LicenseDao {
 
 	License updateLicense(License license);
 
-	Void deleteLicense(String licenseId);
+	String deleteLicense(String licenseId);
 }

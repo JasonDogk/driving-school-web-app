@@ -19,11 +19,16 @@ public class LicenseDaoImpl implements LicenseDao {
 
 	@Override
 	public License getLicense(String licenseId) {
-		@SuppressWarnings("unchecked")
-		TypedQuery<License> query = sessionFactory.getCurrentSession()
-				.createQuery("from License d WHERE d.id = :licenseId");
-		query.setParameter("licenseId", licenseId);
-		return query.getSingleResult();
+		try {
+			@SuppressWarnings("unchecked")
+			TypedQuery<License> query = sessionFactory.getCurrentSession()
+					.createQuery("from License d WHERE d.id = :licenseId");
+			query.setParameter("licenseId", licenseId);
+			return query.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
 
 	@Override
@@ -77,9 +82,10 @@ public class LicenseDaoImpl implements LicenseDao {
 	}
 
 	@Override
-	public Void deleteLicense(String licenseId) {
+	public String deleteLicense(String licenseId) {
 		Session session = null;
 		Transaction transaction = null;
+		String deletedLicenseId = null;
 		try {
 			License license = new License.Builder().id(licenseId).build();
 
@@ -88,6 +94,7 @@ public class LicenseDaoImpl implements LicenseDao {
 			transaction.begin();
 			session.delete(license);
 			transaction.commit();
+			deletedLicenseId = licenseId;
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -98,6 +105,6 @@ public class LicenseDaoImpl implements LicenseDao {
 				session.close();
 			}
 		}
-		return null;
+		return deletedLicenseId;
 	}
 }
