@@ -1,7 +1,5 @@
 package driving.school.web.app.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.MapDetails;
+import driving.school.web.app.exceptions.EmptyObjectException;
+import driving.school.web.app.exceptions.LicenseNotFoundException;
+import driving.school.web.app.exceptions.MissingRequiredParamsException;
 import driving.school.web.app.service.MapDetailsService;
 
 @RestController
@@ -17,28 +18,35 @@ public class MapDetailsController {
 	@Autowired
 	private MapDetailsService mapDetailsService;
 
-	@RequestMapping(value = "/mapDetailss", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<MapDetails> getMapDetailss() {
-		List<MapDetails> mapDetailss = mapDetailsService.listMapDetailss();
-		return mapDetailss;
-	}
-
 	@RequestMapping(value = "/mapDetails/{mapDetailsId}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public MapDetails getMapDetailsById(@PathVariable String mapDetailsId) {
+	public MapDetails getMapDetails(@PathVariable String mapDetailsId) {
 
-		MapDetails mapDetails = mapDetailsService.getMapDetailsById(mapDetailsId);
-		return mapDetails;
+		try {
+			MapDetails mapDetails = mapDetailsService.getMapDetails(mapDetailsId);
+			return mapDetails;
+		} catch (EmptyObjectException e) {
+			e.printStackTrace();
+		}
+		return null;
+
 	}
 
 	@RequestMapping(value = "/mapDetails", method = RequestMethod.POST, headers = "Accept=application/json")
 	public MapDetails createMapDetails(@RequestBody MapDetails mapDetails) {
-		mapDetails = mapDetailsService.createMapDetails(mapDetails);
-		return mapDetails;
+		try {
+			mapDetails = mapDetailsService.createMapDetails(mapDetails);
+			return mapDetails;
+		} catch (EmptyObjectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 
 	}
 
 	@RequestMapping(value = "/mapDetails", method = RequestMethod.PUT, headers = "Accept=application/json")
-	public MapDetails updateMapDetails(@RequestBody MapDetails mapDetails) {
+	public MapDetails updateMapDetails(@RequestBody MapDetails mapDetails)
+			throws EmptyObjectException, MissingRequiredParamsException {
 		mapDetails = mapDetailsService.updateMapDetails(mapDetails);
 		return mapDetails;
 
@@ -46,7 +54,15 @@ public class MapDetailsController {
 
 	@RequestMapping(value = "/mapDetails/{mapDetailsId}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public Void updateMapDetails(@PathVariable String mapDetailsId) {
-		mapDetailsService.deleteMapDetails(mapDetailsId);
+		try {
+			mapDetailsService.deleteMapDetails(mapDetailsId);
+		} catch (LicenseNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EmptyObjectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 }

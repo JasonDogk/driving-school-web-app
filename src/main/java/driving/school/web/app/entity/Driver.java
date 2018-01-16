@@ -92,7 +92,7 @@ public class Driver {
 	}
 
 	public Builder toBuilder() {
-		return new Builder().firstName(getFistrName()).lastName(getLastName()).fathersName(getFathersName())
+		return new Builder().firstName(getFirstName()).lastName(getLastName()).fathersName(getFathersName())
 				.afm(getAfm()).protocolNumber(getProtocolNumber()).phoneNumber(getPhoneNumber())
 				.identificationCardNumber(getIdentificationCardNumber()).dateOfCreation(getDateOfCreation())
 				.timeOfCreation(getTimeOfCreation()).licenseExpirationDate(getLicenseExpirationDate())
@@ -104,7 +104,7 @@ public class Driver {
 		return id;
 	}
 
-	public String getFistrName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
@@ -178,7 +178,7 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver [id=" + id + ", fistrName=" + firstName + ", lastName=" + lastName + ", fathersName="
+		return "Driver [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", fathersName="
 				+ fathersName + ", afm=" + afm + ", protocolNumber=" + protocolNumber + ", phoneNumber=" + phoneNumber
 				+ ", identificationCardNumber=" + identificationCardNumber + ", dateOfCreation=" + dateOfCreation
 				+ ", timeOfCreation=" + timeOfCreation + ", licenseExpirationDate=" + licenseExpirationDate

@@ -1,7 +1,5 @@
 package driving.school.web.app.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,17 +15,18 @@ public class AdministrationTableController {
 	@Autowired
 	private AdministrationTableService administrationTableService;
 
-	@RequestMapping(value = "/administrationTables", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<AdministrationTable> getAdministrationTables() {
-		List<AdministrationTable> administrationTables = administrationTableService.listAdministrationTables();
-		return administrationTables;
-	}
+	// @RequestMapping(value = "/administrationTables", method = RequestMethod.GET,
+	// headers = "Accept=application/json")
+	// public List<AdministrationTable> getAdministrationTables() {
+	// List<AdministrationTable> administrationTables =
+	// administrationTableService.listAdministrationTables();
+	// return administrationTables;
+	// }
 
-	@RequestMapping(value = "/administrationTable/{administrationTableId}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public AdministrationTable getAdministrationTableById(@PathVariable String administrationTableId) {
-
-		AdministrationTable administrationTable = administrationTableService
-				.getAdministrationTableById(administrationTableId);
+	@RequestMapping(value = "/administrationTable/username/{username}/password/{password}", method = RequestMethod.GET, headers = "Accept=application/json")
+	public AdministrationTable getAdministrationTable(@PathVariable("username") String username,
+			@PathVariable("password") String password) {
+		AdministrationTable administrationTable = administrationTableService.getAdministrationTable(username, password);
 		return administrationTable;
 	}
 

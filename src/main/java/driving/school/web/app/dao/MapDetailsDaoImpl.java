@@ -1,7 +1,5 @@
 package driving.school.web.app.dao;
 
-import java.util.List;
-
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
@@ -20,19 +18,17 @@ public class MapDetailsDaoImpl implements MapDetailsDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<MapDetails> listMapDetailss() {
-		@SuppressWarnings("unchecked")
-		TypedQuery<MapDetails> query = sessionFactory.getCurrentSession().createQuery("from MapDetails");
-		return query.getResultList();
-	}
+	public MapDetails getMapDetails(String mapDetailsId) {
+		try {
+			@SuppressWarnings("unchecked")
+			TypedQuery<MapDetails> query = sessionFactory.getCurrentSession()
+					.createQuery("from MapDetails d WHERE d.id = :mapDetailsId");
+			query.setParameter("mapDetailsId", mapDetailsId);
+			return query.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
 
-	@Override
-	public MapDetails getMapDetailsById(String mapDetailsId) {
-		@SuppressWarnings("unchecked")
-		TypedQuery<MapDetails> query = sessionFactory.getCurrentSession()
-				.createQuery("from MapDetails d WHERE d.id = :mapDetailsId");
-		query.setParameter("mapDetailsId", mapDetailsId);
-		return query.getSingleResult();
 	}
 
 	@Override
@@ -86,9 +82,10 @@ public class MapDetailsDaoImpl implements MapDetailsDao {
 	}
 
 	@Override
-	public Void deleteMapDetails(String mapDetailsId) {
+	public String deleteMapDetails(String mapDetailsId) {
 		Session session = null;
 		Transaction transaction = null;
+		String deletedMapDetailsId = null;
 		try {
 			MapDetails mapDetails = new MapDetails.Builder().id(mapDetailsId).build();
 
@@ -97,6 +94,7 @@ public class MapDetailsDaoImpl implements MapDetailsDao {
 			transaction.begin();
 			session.delete(mapDetails);
 			transaction.commit();
+			deletedMapDetailsId = mapDetailsId;
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -107,6 +105,6 @@ public class MapDetailsDaoImpl implements MapDetailsDao {
 				session.close();
 			}
 		}
-		return null;
+		return deletedMapDetailsId;
 	}
 }

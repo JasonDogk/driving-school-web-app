@@ -19,7 +19,7 @@ public class LicenseController {
 	@Autowired
 	private LicenseService licenseService;
 
-	@RequestMapping(value = "/driver/{licenseId}", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/license/{licenseId}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public License getLicense(@PathVariable String licenseId) {
 
 		try {
@@ -60,7 +60,7 @@ public class LicenseController {
 	}
 
 	@RequestMapping(value = "/license/{licenseId}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-	public Void updateLicense(@PathVariable String licenseId) {
+	public Void deleteLicense(@PathVariable String licenseId) {
 		try {
 			licenseService.deleteLicense(licenseId);
 		} catch (EmptyObjectException e) {

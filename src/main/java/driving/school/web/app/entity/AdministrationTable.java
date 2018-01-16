@@ -18,6 +18,9 @@ public class AdministrationTable {
 	@Column(name = "password")
 	private String password;
 
+	private AdministrationTable() {
+	}
+
 	private AdministrationTable(Builder builder) {
 		this.id = builder.id;
 		this.username = builder.username;

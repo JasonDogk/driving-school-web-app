@@ -1,7 +1,5 @@
 package driving.school.web.app.dao;
 
-import java.util.List;
-
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
@@ -20,19 +18,13 @@ public class AdministrationTableDaoImpl implements AdministrationTableDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<AdministrationTable> listAdministrationTables() {
-		@SuppressWarnings("unchecked")
-		TypedQuery<AdministrationTable> query = sessionFactory.getCurrentSession()
-				.createQuery("from AdministrationTable");
-		return query.getResultList();
-	}
+	public AdministrationTable getAdministrationTable(String username, String password) {
 
-	@Override
-	public AdministrationTable getAdministrationTableById(String administrationTableId) {
 		@SuppressWarnings("unchecked")
 		TypedQuery<AdministrationTable> query = sessionFactory.getCurrentSession()
-				.createQuery("from AdministrationTable d WHERE d.id = :administrationTableId");
-		query.setParameter("administrationTableId", administrationTableId);
+				.createQuery("from AdministrationTable d WHERE d.username = :username AND d.password = :password");
+		query.setParameter("username", username);
+		query.setParameter("password", password);
 		return query.getSingleResult();
 	}
 

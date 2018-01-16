@@ -1,17 +1,17 @@
 package driving.school.web.app.service;
 
-import java.util.List;
-
 import driving.school.web.app.entity.MapDetails;
+import driving.school.web.app.exceptions.EmptyObjectException;
+import driving.school.web.app.exceptions.LicenseNotFoundException;
+import driving.school.web.app.exceptions.MissingRequiredParamsException;
 
 public interface MapDetailsService {
-	List<MapDetails> listMapDetailss();
 
-	MapDetails getMapDetailsById(String mapDetailsId);
+	MapDetails getMapDetails(String mapDetailsId) throws EmptyObjectException;
 
-	MapDetails createMapDetails(MapDetails mapDetails);
+	MapDetails createMapDetails(MapDetails mapDetails) throws EmptyObjectException;
 
-	MapDetails updateMapDetails(MapDetails mapDetails);
+	MapDetails updateMapDetails(MapDetails mapDetails) throws EmptyObjectException, MissingRequiredParamsException;
 
-	Void deleteMapDetails(String mapDetailsId);
+	String deleteMapDetails(String mapDetailsId) throws LicenseNotFoundException, EmptyObjectException;
 }

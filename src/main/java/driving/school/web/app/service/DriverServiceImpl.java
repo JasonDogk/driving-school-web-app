@@ -53,10 +53,11 @@ public class DriverServiceImpl implements DriverService {
 		String driverId = UUID.randomUUID().toString();
 		Driver newDriver = driver.toBuilder().id(driverId).build();
 
-		if (UtilLib.hasAllTheMandatoryFields(driver)) {
+		if (UtilLib.hasAllTheMandatoryFields(newDriver)) {
 			return driverDao.createDriver(newDriver);
 		} else {
-			throw new MissingRequiredParamsException("Not All mandatory fields completed to create a driver");
+			throw new MissingRequiredParamsException(
+					"Not All mandatory fields completed to create a driver: " + newDriver.toString());
 		}
 
 	}

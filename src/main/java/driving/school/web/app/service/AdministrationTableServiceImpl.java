@@ -1,7 +1,5 @@
 package driving.school.web.app.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,13 +14,8 @@ public class AdministrationTableServiceImpl implements AdministrationTableServic
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<AdministrationTable> listAdministrationTables() {
-		return administrationTableDao.listAdministrationTables();
-	}
-
-	@Override
-	public AdministrationTable getAdministrationTableById(String administrationTableId) {
-		return administrationTableDao.getAdministrationTableById(administrationTableId);
+	public AdministrationTable getAdministrationTable(String username, String password) {
+		return administrationTableDao.getAdministrationTable(username, password);
 	}
 
 	@Override
