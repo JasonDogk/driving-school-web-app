@@ -1,10 +1,13 @@
 driving\school\web\app\controller\AdministrationTableController.class
 driving\school\web\app\service\MapDetailsServiceImpl.class
+driving\school\web\app\entity\LoginDriver$Builder.class
 driving\school\web\app\entity\Driver$Builder.class
 driving\school\web\app\service\MapDetailsService.class
+driving\school\web\app\InvokeRequests.class
 driving\school\web\app\entity\AdministrationTable$Builder.class
 driving\school\web\app\dao\MapDetailsDao.class
 driving\school\web\app\exceptions\EmptyObjectException.class
+driving\school\web\app\entity\LoginDriver$1.class
 driving\school\web\app\exceptions\MissingRequiredParamsException.class
 driving\school\web\app\dao\AdministrationTableDao.class
 driving\school\web\app\entity\License.class
@@ -34,6 +37,7 @@ driving\school\web\app\entity\AdministrationTable$1.class
 driving\school\web\app\config\AppInitializer.class
 driving\school\web\app\entity\AdministrationTable.class
 driving\school\web\app\entity\Driver$1.class
+driving\school\web\app\entity\LoginDriver.class
 driving\school\web\app\dao\MapDetailsDaoImpl.class
 driving\school\web\app\MainApp.class
 driving\school\web\app\entity\License$Builder.class

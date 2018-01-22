@@ -1,5 +1,6 @@
 package driving.school.web.app;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import driving.school.web.app.config.AppConfig;
 import driving.school.web.app.entity.AdministrationTable;
 import driving.school.web.app.entity.Driver;
+import driving.school.web.app.entity.LoginDriver;
 import driving.school.web.app.exceptions.DataNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
@@ -41,6 +43,12 @@ public class MainApp {
 
 		AdministrationTable administrationTable = administrationService.getAdministrationTable("admin", "admin");
 		System.err.println(administrationTable);
+
+		List<LoginDriver> loginDrivers = driverService.getLoginDrivers();
+		System.err.println("Login drivers size: " + loginDrivers.size());
+		for (LoginDriver loginDriver : loginDrivers) {
+			System.out.println(loginDriver.toString());
+		}
 
 		context.close();
 

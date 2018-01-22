@@ -3,6 +3,7 @@ package driving.school.web.app;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,18 +15,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import driving.school.web.app.entity.AdministrationTable;
 
 public class InvokeRequests {
+	static String staticUrl = new String("http://localhost:8080/driving-school-web-app-0.0.1-SNAPSHOT/");
 
 	public static void main(String[] args) {
-		List<Object> response = getRequests("administrationTable/username/aa/password/aa");
+		List<Object> response = getRequest("administrationTable/username/aa/password/aa");
 
 	}
 
-	public static List<Object> getRequests(String appendURL) {
+	public static List<Object> getRequest(String appendURL) {
 
-		String staticUrl = new String("http://localhost:8080/driving-school-web-app-0.0.1-SNAPSHOT/");
 		List<Object> listToReturn = new ArrayList<Object>();
 
-		staticUrl += appendURL;
+		appendURL = staticUrl + appendURL;
 		try {
 			URL url = new URL(staticUrl);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -61,6 +62,47 @@ public class InvokeRequests {
 		} // TODO: handle exception
 
 		return listToReturn;
+	}
+
+	public void postRequest(String appendURL, String input) {
+		try {
+
+			URL targetUrl = new URL(staticUrl + appendURL);
+
+			HttpURLConnection httpConnection = (HttpURLConnection) targetUrl.openConnection();
+			httpConnection.setDoOutput(true);
+			httpConnection.setRequestMethod("POST");
+			httpConnection.setRequestProperty("Content-Type", "application/json");
+
+			OutputStream outputStream = httpConnection.getOutputStream();
+			outputStream.write(input.getBytes());
+			outputStream.flush();
+
+			if (httpConnection.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : " + httpConnection.getResponseCode());
+			}
+
+			BufferedReader responseBuffer = new BufferedReader(
+					new InputStreamReader((httpConnection.getInputStream())));
+
+			String output;
+			System.out.println("Output from Server:\n");
+			while ((output = responseBuffer.readLine()) != null) {
+				System.out.println(output);
+			}
+
+			httpConnection.disconnect();
+
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
 	}
 
 }

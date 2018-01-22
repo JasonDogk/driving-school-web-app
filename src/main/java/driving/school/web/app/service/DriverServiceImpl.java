@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import driving.school.web.app.dao.DriverDao;
 import driving.school.web.app.entity.Driver;
+import driving.school.web.app.entity.LoginDriver;
 import driving.school.web.app.exceptions.DataNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
@@ -25,6 +26,18 @@ public class DriverServiceImpl implements DriverService {
 	public List<Driver> getDrivers() throws DataNotFoundException {
 
 		List<Driver> drivers = driverDao.getDrivers();
+
+		if (UtilLib.isEmpty(drivers)) {
+			throw new DataNotFoundException("No Drivers exist in Database");
+		}
+		return drivers;
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<LoginDriver> getLoginDrivers() throws DataNotFoundException {
+
+		List<LoginDriver> drivers = driverDao.getLoginDrivers();
 
 		if (UtilLib.isEmpty(drivers)) {
 			throw new DataNotFoundException("No Drivers exist in Database");

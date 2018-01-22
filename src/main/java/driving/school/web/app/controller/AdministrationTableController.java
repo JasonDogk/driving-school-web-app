@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.AdministrationTable;
@@ -23,9 +24,20 @@ public class AdministrationTableController {
 	// return administrationTables;
 	// }
 
-	@RequestMapping(value = "/administrationTable/username/{username}/password/{password}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public AdministrationTable getAdministrationTable(@PathVariable("username") String username,
-			@PathVariable("password") String password) {
+	// @RequestMapping(value =
+	// "/administrationTable/username/{username}/password/{password}", method =
+	// RequestMethod.GET, headers = "Accept=application/json")
+	// public AdministrationTable getAdministrationTable(@PathVariable("username")
+	// String username,
+	// @PathVariable("password") String password) {
+	// AdministrationTable administrationTable =
+	// administrationTableService.getAdministrationTable(username, password);
+	// return administrationTable;
+	// }
+
+	@RequestMapping(value = "/administrationTable", method = RequestMethod.GET, headers = "Accept=application/json")
+	public AdministrationTable getAdministrationTable(@RequestParam("username") String username,
+			@RequestParam("password") String password) {
 		AdministrationTable administrationTable = administrationTableService.getAdministrationTable(username, password);
 		return administrationTable;
 	}

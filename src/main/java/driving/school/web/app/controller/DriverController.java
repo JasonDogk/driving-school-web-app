@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import driving.school.web.app.entity.Driver;
+import driving.school.web.app.entity.LoginDriver;
 import driving.school.web.app.exceptions.DataNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
@@ -26,6 +27,18 @@ public class DriverController {
 		List<Driver> drivers = null;
 		try {
 			drivers = driverService.getDrivers();
+		} catch (DataNotFoundException e) {
+			e.printStackTrace();
+
+		}
+		return drivers;
+	}
+
+	@RequestMapping(value = "/loginDrivers", method = RequestMethod.GET, headers = "Accept=application/json")
+	public List<LoginDriver> getLoginDrivers() {
+		List<LoginDriver> drivers = null;
+		try {
+			drivers = driverService.getLoginDrivers();
 		} catch (DataNotFoundException e) {
 			e.printStackTrace();
 

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import driving.school.web.app.entity.Driver;
+import driving.school.web.app.entity.LoginDriver;
 
 @Repository
 @Transactional
@@ -24,6 +25,13 @@ public class DriverDaoImpl implements DriverDao {
 	public List<Driver> getDrivers() {
 		@SuppressWarnings("unchecked")
 		TypedQuery<Driver> query = sessionFactory.getCurrentSession().createQuery("from Driver");
+		return query.getResultList();
+	}
+
+	@Override
+	public List<LoginDriver> getLoginDrivers() {
+		@SuppressWarnings("unchecked")
+		TypedQuery<LoginDriver> query = sessionFactory.getCurrentSession().createQuery("from LoginDriver");
 		return query.getResultList();
 	}
 
