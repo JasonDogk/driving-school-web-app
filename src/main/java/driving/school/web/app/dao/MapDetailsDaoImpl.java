@@ -1,5 +1,7 @@
 package driving.school.web.app.dao;
 
+import java.util.List;
+
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
@@ -16,6 +18,13 @@ import driving.school.web.app.entity.MapDetails;
 public class MapDetailsDaoImpl implements MapDetailsDao {
 	@Autowired
 	private SessionFactory sessionFactory;
+
+	@Override
+	public List<MapDetails> getMapDetails() {
+		@SuppressWarnings("unchecked")
+		TypedQuery<MapDetails> query = sessionFactory.getCurrentSession().createQuery("from MapDetails");
+		return query.getResultList();
+	}
 
 	@Override
 	public MapDetails getMapDetails(String mapDetailsId) {

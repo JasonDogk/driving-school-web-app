@@ -1,12 +1,16 @@
 package driving.school.web.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import driving.school.web.app.dao.MapDetailsDao;
 import driving.school.web.app.entity.MapDetails;
+import driving.school.web.app.exceptions.DataNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
-import driving.school.web.app.exceptions.LicenseNotFoundException;
+import driving.school.web.app.exceptions.MapDetailsNotFoundException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
 import driving.school.web.app.utilLib.UtilLib;
 
@@ -15,6 +19,18 @@ public class MapDetailsServiceImpl implements MapDetailsService {
 
 	@Autowired
 	private MapDetailsDao mapDetailsDao;
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<MapDetails> getMapDetails() throws DataNotFoundException {
+
+		List<MapDetails> mapDetails = mapDetailsDao.getMapDetails();
+
+		if (UtilLib.isEmpty(mapDetails)) {
+			throw new DataNotFoundException("No MapDetails exist in Database");
+		}
+		return mapDetails;
+	}
 
 	@Override
 	public MapDetails getMapDetails(String mapDetailsId) throws EmptyObjectException {
@@ -52,17 +68,17 @@ public class MapDetailsServiceImpl implements MapDetailsService {
 	}
 
 	@Override
-	public String deleteMapDetails(String mapDetailsId) throws LicenseNotFoundException, EmptyObjectException {
+	public String deleteMapDetails(String mapDetailsId) throws MapDetailsNotFoundException, EmptyObjectException {
 
 		if (!UtilLib.isEmpty(mapDetailsId)) {
 			String deletedLicenseId = mapDetailsDao.deleteMapDetails(mapDetailsId);
 			if (!UtilLib.isEmpty(deletedLicenseId)) {
 				return deletedLicenseId;
 			} else {
-				throw new LicenseNotFoundException("Requested license id to be deleted was not found");
+				throw new MapDetailsNotFoundException("Requested map details id to be deleted was not found");
 			}
 		} else {
-			throw new EmptyObjectException("No license id provided in order to be deleted");
+			throw new EmptyObjectException("No map details id provided in order to be deleted");
 		}
 
 	}

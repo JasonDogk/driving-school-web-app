@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import driving.school.web.app.entity.Driver;
 import driving.school.web.app.entity.LoginDriver;
 import driving.school.web.app.exceptions.DataNotFoundException;
+import driving.school.web.app.exceptions.DriverNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
 import driving.school.web.app.service.DriverService;
@@ -60,7 +61,7 @@ public class DriverController {
 		return driver;
 	}
 
-	@RequestMapping(value = "/driver", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/driver", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public Driver createDriver(@RequestBody Driver driver) {
 		try {
 			driver = driverService.createDriver(driver);
@@ -71,7 +72,7 @@ public class DriverController {
 		return null;
 	}
 
-	@RequestMapping(value = "/driver", method = RequestMethod.PUT, headers = "Accept=application/json")
+	@RequestMapping(value = "/driver", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Driver updateDriver(@RequestBody Driver driver) {
 		try {
 			driver = driverService.updateDriver(driver);
@@ -88,6 +89,9 @@ public class DriverController {
 		try {
 			return driverService.deleteDriver(driverId);
 		} catch (EmptyObjectException e) {
+			e.printStackTrace();
+		} catch (DriverNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

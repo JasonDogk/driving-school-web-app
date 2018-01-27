@@ -5,247 +5,253 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "driver_licenses")
 public class License {
 
 	@Id
+	@JsonProperty("id")
 	private String id;
 
 	@Column(name = "am")
+	@JsonProperty("am")
 	private String am;
 
 	@Column(name = "am_date")
+	@JsonProperty("amDate")
 	private String amDate;
 
 	@Column(name = "am_finished")
+	@JsonProperty("amFinished")
 	private String amFinished;
 
 	@Column(name = "a1")
+	@JsonProperty("a1")
 	private String a1;
 
 	@Column(name = "a1_date")
+	@JsonProperty("a1Date")
 	private String a1Date;
 
 	@Column(name = "a1_finished")
+	@JsonProperty("a1Finished")
 	private String a1Finished;
 
 	@Column(name = "a1_finished_date")
+	@JsonProperty("a1FinishedDate")
 	private String a1FinishedDate;
 
 	@Column(name = "a2")
+	@JsonProperty("a2")
 	private String a2;
 
 	@Column(name = "a2_date")
+	@JsonProperty("a2Date")
 	private String a2Date;
 
 	@Column(name = "a2_finished")
+	@JsonProperty("a2Finished")
 	private String a2Finished;
 
 	@Column(name = "a2_finished_date")
+	@JsonProperty("a2FinishedDate")
 	private String a2FinishedDate;
 
 	@Column(name = "a")
+	@JsonProperty("a")
 	private String a;
 
 	@Column(name = "a_date")
+	@JsonProperty("aDate")
 	private String aDate;
 
 	@Column(name = "a_finished")
+	@JsonProperty("aFinished")
 	private String aFinished;
 
 	@Column(name = "a_finished_date")
+	@JsonProperty("aFinishedDate")
 	private String aFinishedDate;
 
 	@Column(name = "b1")
+	@JsonProperty("b1")
 	private String b1;
 
 	@Column(name = "b1_date")
+	@JsonProperty("b1Date")
 	private String b1Date;
 
 	@Column(name = "b1_finished")
+	@JsonProperty("b1Finished")
 	private String b1Finished;
 
 	@Column(name = "b1_finished_date")
+	@JsonProperty("b1FinishedDate")
 	private String b1FinishedDate;
 
 	@Column(name = "b")
+	@JsonProperty("b")
 	private String b;
 
 	@Column(name = "b_date")
+	@JsonProperty("bDate")
 	private String bDate;
 
 	@Column(name = "b_finished")
+	@JsonProperty("bFinished")
 	private String bFinished;
 
 	@Column(name = "b_finished_date")
+	@JsonProperty("bFinishedDate")
 	private String bFinishedDate;
 
 	@Column(name = "c1")
+	@JsonProperty("c1")
 	private String c1;
 
 	@Column(name = "c1_date")
+	@JsonProperty("c1Date")
 	private String c1Date;
 
 	@Column(name = "c1_finished")
+	@JsonProperty("c1Finished")
 	private String c1Finished;
 
+	@Column(name = "c1_finished_date")
+	@JsonProperty("c1FinishedDate")
+	private String c1FinishedDate;
+
 	@Column(name = "c")
+	@JsonProperty("c")
 	private String c;
 
 	@Column(name = "c_date")
+	@JsonProperty("cDate")
 	private String cDate;
 
 	@Column(name = "c_finished")
+	@JsonProperty("cFinished")
 	private String cFinished;
 
 	@Column(name = "c_finished_date")
+	@JsonProperty("cFinishedDate")
 	private String cFinishedDate;
 
 	@Column(name = "d1")
+	@JsonProperty("d1")
 	private String d1;
 
 	@Column(name = "d1_date")
+	@JsonProperty("d1Date")
 	private String d1Date;
 
 	@Column(name = "d1_finished")
+	@JsonProperty("d1Finished")
 	private String d1Finished;
 
 	@Column(name = "d1_finished_date")
+	@JsonProperty("d1FinishedFate")
 	private String d1FinishedFate;
 
 	@Column(name = "d")
+	@JsonProperty("d")
 	private String d;
 
-	@Column(name = "dDate")
+	@Column(name = "d_Date")
+	@JsonProperty("dDate")
 	private String dDate;
 
 	@Column(name = "d_finished")
+	@JsonProperty("dFinished")
 	private String dFinished;
 
 	@Column(name = "d_finished_date")
+	@JsonProperty("dFinishedDate")
 	private String dFinishedDate;
 
 	@Column(name = "be")
+	@JsonProperty("be")
 	private String be;
 
 	@Column(name = "be_date")
+	@JsonProperty("beDate")
 	private String beDate;
 
 	@Column(name = "be_finished")
+	@JsonProperty("beFinished")
 	private String beFinished;
 
 	@Column(name = "be_finished_date")
+	@JsonProperty("beFinishedDate")
 	private String beFinishedDate;
 
 	@Column(name = "c1e")
+	@JsonProperty("c1e")
 	private String c1e;
 
 	@Column(name = "c1e_date")
+	@JsonProperty("c1eDate")
 	private String c1eDate;
 
 	@Column(name = "c1e_finished")
+	@JsonProperty("c1eFinished")
 	private String c1eFinished;
 
 	@Column(name = "c1e_finished_date")
+	@JsonProperty("c1eFinishedDate")
 	private String c1eFinishedDate;
 
 	@Column(name = "ce")
+	@JsonProperty("ce")
 	private String ce;
 
 	@Column(name = "ce_date")
+	@JsonProperty("ceDate")
 	private String ceDate;
 
 	@Column(name = "ce_finished")
+	@JsonProperty("ceFinished")
 	private String ceFinished;
 
 	@Column(name = "ce_finished_date")
+	@JsonProperty("ceFinishedDate")
 	private String ceFinishedDate;
 
 	@Column(name = "d1e")
+	@JsonProperty("d1e")
 	private String d1e;
 
 	@Column(name = "d1e_date")
+	@JsonProperty("d1eDate")
 	private String d1eDate;
 
 	@Column(name = "d1e_finished")
+	@JsonProperty("d1eFinished")
 	private String d1eFinished;
 
 	@Column(name = "d1e_finished_date")
+	@JsonProperty("d1eFinishedDate")
 	private String d1eFinishedDate;
 
 	@Column(name = "de")
+	@JsonProperty("de")
 	private String de;
 
 	@Column(name = "de_date")
+	@JsonProperty("deDate")
 	private String deDate;
 
 	@Column(name = "de_finished")
+	@JsonProperty("deFinished")
 	private String deFinished;
 
 	@Column(name = "de_finished_date")
+	@JsonProperty("deFinishedDate")
 	private String deFinishedDate;
 
-	private License(Builder builder) {
-		this.id = builder.id;
-		this.am = builder.am;
-		this.amDate = builder.amDate;
-		this.amFinished = builder.amFinished;
-		this.a1 = builder.a1;
-		this.a1Date = builder.a1Date;
-		this.a1Finished = builder.a1Finished;
-		this.a1FinishedDate = builder.a1FinishedDate;
-		this.a2 = builder.a2;
-		this.a2Date = builder.a2Date;
-		this.a2Finished = builder.a2Finished;
-		this.a2FinishedDate = builder.a2FinishedDate;
-		this.a = builder.a;
-		this.aDate = builder.aDate;
-		this.aFinished = builder.aFinished;
-		this.aFinishedDate = builder.aFinishedDate;
-		this.b1 = builder.b1;
-		this.b1Date = builder.b1Date;
-		this.b1Finished = builder.b1Finished;
-		this.b1FinishedDate = builder.b1FinishedDate;
-		this.b = builder.b;
-		this.bDate = builder.bDate;
-		this.bFinished = builder.bFinished;
-		this.bFinishedDate = builder.bFinishedDate;
-		this.c1 = builder.c1;
-		this.c1Date = builder.c1Date;
-		this.c1Finished = builder.c1Finished;
-		this.c = builder.c;
-		this.cDate = builder.cDate;
-		this.cFinished = builder.cFinished;
-		this.cFinishedDate = builder.cFinishedDate;
-		this.d1 = builder.d1;
-		this.d1Date = builder.d1Date;
-		this.d1Finished = builder.d1Finished;
-		this.d1FinishedFate = builder.d1FinishedFate;
-		this.d = builder.d;
-		this.dDate = builder.dDate;
-		this.dFinished = builder.dFinished;
-		this.dFinishedDate = builder.dFinishedDate;
-		this.be = builder.be;
-		this.beDate = builder.beDate;
-		this.beFinished = builder.beFinished;
-		this.beFinishedDate = builder.beFinishedDate;
-		this.c1e = builder.c1e;
-		this.c1eDate = builder.c1eDate;
-		this.c1eFinished = builder.c1eFinished;
-		this.c1eFinishedDate = builder.c1eFinishedDate;
-		this.ce = builder.ce;
-		this.ceDate = builder.ceDate;
-		this.ceFinished = builder.ceFinished;
-		this.ceFinishedDate = builder.ceFinishedDate;
-		this.d1e = builder.d1e;
-		this.d1eDate = builder.d1eDate;
-		this.d1eFinished = builder.d1eFinished;
-		this.d1eFinishedDate = builder.d1eFinishedDate;
-		this.de = builder.de;
-		this.deDate = builder.deDate;
-		this.deFinished = builder.deFinished;
-		this.deFinishedDate = builder.deFinishedDate;
+	public License() {
 
 	}
 
@@ -355,6 +361,10 @@ public class License {
 
 	public String getC1Finished() {
 		return c1Finished;
+	}
+
+	public String getC1FinishedDate() {
+		return c1FinishedDate;
 	}
 
 	public String getC() {
@@ -483,6 +493,70 @@ public class License {
 
 	public String getDeFinishedDate() {
 		return deFinishedDate;
+	}
+
+	private License(Builder builder) {
+		this.id = builder.id;
+		this.am = builder.am;
+		this.amDate = builder.amDate;
+		this.amFinished = builder.amFinished;
+		this.a1 = builder.a1;
+		this.a1Date = builder.a1Date;
+		this.a1Finished = builder.a1Finished;
+		this.a1FinishedDate = builder.a1FinishedDate;
+		this.a2 = builder.a2;
+		this.a2Date = builder.a2Date;
+		this.a2Finished = builder.a2Finished;
+		this.a2FinishedDate = builder.a2FinishedDate;
+		this.a = builder.a;
+		this.aDate = builder.aDate;
+		this.aFinished = builder.aFinished;
+		this.aFinishedDate = builder.aFinishedDate;
+		this.b1 = builder.b1;
+		this.b1Date = builder.b1Date;
+		this.b1Finished = builder.b1Finished;
+		this.b1FinishedDate = builder.b1FinishedDate;
+		this.b = builder.b;
+		this.bDate = builder.bDate;
+		this.bFinished = builder.bFinished;
+		this.bFinishedDate = builder.bFinishedDate;
+		this.c1 = builder.c1;
+		this.c1Date = builder.c1Date;
+		this.c1Finished = builder.c1Finished;
+		this.c1FinishedDate = builder.c1FinishedDate;
+		this.c = builder.c;
+		this.cDate = builder.cDate;
+		this.cFinished = builder.cFinished;
+		this.cFinishedDate = builder.cFinishedDate;
+		this.d1 = builder.d1;
+		this.d1Date = builder.d1Date;
+		this.d1Finished = builder.d1Finished;
+		this.d1FinishedFate = builder.d1FinishedFate;
+		this.d = builder.d;
+		this.dDate = builder.dDate;
+		this.dFinished = builder.dFinished;
+		this.dFinishedDate = builder.dFinishedDate;
+		this.be = builder.be;
+		this.beDate = builder.beDate;
+		this.beFinished = builder.beFinished;
+		this.beFinishedDate = builder.beFinishedDate;
+		this.c1e = builder.c1e;
+		this.c1eDate = builder.c1eDate;
+		this.c1eFinished = builder.c1eFinished;
+		this.c1eFinishedDate = builder.c1eFinishedDate;
+		this.ce = builder.ce;
+		this.ceDate = builder.ceDate;
+		this.ceFinished = builder.ceFinished;
+		this.ceFinishedDate = builder.ceFinishedDate;
+		this.d1e = builder.d1e;
+		this.d1eDate = builder.d1eDate;
+		this.d1eFinished = builder.d1eFinished;
+		this.d1eFinishedDate = builder.d1eFinishedDate;
+		this.de = builder.de;
+		this.deDate = builder.deDate;
+		this.deFinished = builder.deFinished;
+		this.deFinishedDate = builder.deFinishedDate;
+
 	}
 
 	@Override

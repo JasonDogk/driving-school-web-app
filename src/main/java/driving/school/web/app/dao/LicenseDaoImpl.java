@@ -1,5 +1,6 @@
 package driving.school.web.app.dao;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
@@ -25,10 +26,13 @@ public class LicenseDaoImpl implements LicenseDao {
 					.createQuery("from License d WHERE d.id = :licenseId");
 			query.setParameter("licenseId", licenseId);
 			return query.getSingleResult();
+		} catch (NoResultException e) {
+			System.out.println("Entity Not Found exception");
 		} catch (Exception e) {
-			return null;
-		}
+			e.printStackTrace();
 
+		}
+		return null;
 	}
 
 	@Override

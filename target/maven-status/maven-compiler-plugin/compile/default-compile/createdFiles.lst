@@ -6,6 +6,7 @@ driving\school\web\app\service\MapDetailsService.class
 driving\school\web\app\InvokeRequests.class
 driving\school\web\app\entity\AdministrationTable$Builder.class
 driving\school\web\app\dao\MapDetailsDao.class
+driving\school\web\app\exceptions\MapDetailsNotFoundException.class
 driving\school\web\app\exceptions\EmptyObjectException.class
 driving\school\web\app\entity\LoginDriver$1.class
 driving\school\web\app\exceptions\MissingRequiredParamsException.class

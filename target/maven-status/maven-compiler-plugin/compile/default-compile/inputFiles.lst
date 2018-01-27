@@ -6,6 +6,7 @@ C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\controller\DriverController.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\utilLib\UtilLib.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\AdministrationTableDaoImpl.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\exceptions\MapDetailsNotFoundException.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\exceptions\DataNotFoundException.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\DriverDaoImpl.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\AdministrationTableDao.java

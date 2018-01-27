@@ -11,7 +11,10 @@ import driving.school.web.app.dao.DriverDao;
 import driving.school.web.app.entity.Driver;
 import driving.school.web.app.entity.LoginDriver;
 import driving.school.web.app.exceptions.DataNotFoundException;
+import driving.school.web.app.exceptions.DriverNotFoundException;
 import driving.school.web.app.exceptions.EmptyObjectException;
+import driving.school.web.app.exceptions.LicenseNotFoundException;
+import driving.school.web.app.exceptions.MapDetailsNotFoundException;
 import driving.school.web.app.exceptions.MissingRequiredParamsException;
 import driving.school.web.app.utilLib.UtilLib;
 
@@ -20,6 +23,12 @@ public class DriverServiceImpl implements DriverService {
 
 	@Autowired
 	private DriverDao driverDao;
+
+	@Autowired
+	private LicenseService licenseService;
+
+	@Autowired
+	private MapDetailsService mapDetailsService;
 
 	@Transactional(readOnly = true)
 	@Override
@@ -86,11 +95,26 @@ public class DriverServiceImpl implements DriverService {
 	}
 
 	@Override
-	public String deleteDriver(String driverId) throws EmptyObjectException {
+	public String deleteDriver(String driverId) throws EmptyObjectException, DriverNotFoundException {
 
 		if (!UtilLib.isEmpty(driverId)) {
+
+			try {
+				mapDetailsService.deleteMapDetails(driverId);
+			} catch (MapDetailsNotFoundException e1) {
+			}
+
+			try {
+				licenseService.deleteLicense(driverId);
+			} catch (LicenseNotFoundException e) {
+			}
+
 			String deletedDriverId = driverDao.deleteDriver(driverId);
-			return deletedDriverId;
+			if (!UtilLib.isEmpty(deletedDriverId)) {
+				return deletedDriverId;
+			} else {
+				throw new DriverNotFoundException("Requested driver id to be deleted was not found");
+			}
 		} else {
 			throw new EmptyObjectException("Provided driver id is empty/null");
 		}

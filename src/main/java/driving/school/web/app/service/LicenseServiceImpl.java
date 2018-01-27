@@ -16,9 +16,6 @@ public class LicenseServiceImpl implements LicenseService {
 	@Autowired
 	private LicenseDao licenseDao;
 
-	@Autowired
-	private DriverService driverService;
-
 	@Override
 	public License getLicense(String licenseId) throws EmptyObjectException {
 

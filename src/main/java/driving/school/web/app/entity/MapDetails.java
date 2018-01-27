@@ -41,6 +41,10 @@ public class MapDetails {
 		return "MapDetails [id=" + id + ", longtitude=" + longtitude + ", latitude=" + latitude + "]";
 	}
 
+	public MapDetails() {
+
+	}
+
 	public static class Builder {
 		private String id;
 		private String longtitude;
