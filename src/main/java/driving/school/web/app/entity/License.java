@@ -17,7 +17,7 @@ public class License {
 
 	@Column(name = "am")
 	@JsonProperty("am")
-	private String am;
+	private Boolean am;
 
 	@Column(name = "am_date")
 	@JsonProperty("amDate")
@@ -25,11 +25,11 @@ public class License {
 
 	@Column(name = "am_finished")
 	@JsonProperty("amFinished")
-	private String amFinished;
+	private Boolean amFinished;
 
 	@Column(name = "a1")
 	@JsonProperty("a1")
-	private String a1;
+	private Boolean a1;
 
 	@Column(name = "a1_date")
 	@JsonProperty("a1Date")
@@ -37,7 +37,7 @@ public class License {
 
 	@Column(name = "a1_finished")
 	@JsonProperty("a1Finished")
-	private String a1Finished;
+	private Boolean a1Finished;
 
 	@Column(name = "a1_finished_date")
 	@JsonProperty("a1FinishedDate")
@@ -45,7 +45,7 @@ public class License {
 
 	@Column(name = "a2")
 	@JsonProperty("a2")
-	private String a2;
+	private Boolean a2;
 
 	@Column(name = "a2_date")
 	@JsonProperty("a2Date")
@@ -53,7 +53,7 @@ public class License {
 
 	@Column(name = "a2_finished")
 	@JsonProperty("a2Finished")
-	private String a2Finished;
+	private Boolean a2Finished;
 
 	@Column(name = "a2_finished_date")
 	@JsonProperty("a2FinishedDate")
@@ -61,7 +61,7 @@ public class License {
 
 	@Column(name = "a")
 	@JsonProperty("a")
-	private String a;
+	private Boolean a;
 
 	@Column(name = "a_date")
 	@JsonProperty("aDate")
@@ -69,7 +69,7 @@ public class License {
 
 	@Column(name = "a_finished")
 	@JsonProperty("aFinished")
-	private String aFinished;
+	private Boolean aFinished;
 
 	@Column(name = "a_finished_date")
 	@JsonProperty("aFinishedDate")
@@ -77,7 +77,7 @@ public class License {
 
 	@Column(name = "b1")
 	@JsonProperty("b1")
-	private String b1;
+	private Boolean b1;
 
 	@Column(name = "b1_date")
 	@JsonProperty("b1Date")
@@ -85,7 +85,7 @@ public class License {
 
 	@Column(name = "b1_finished")
 	@JsonProperty("b1Finished")
-	private String b1Finished;
+	private Boolean b1Finished;
 
 	@Column(name = "b1_finished_date")
 	@JsonProperty("b1FinishedDate")
@@ -93,7 +93,7 @@ public class License {
 
 	@Column(name = "b")
 	@JsonProperty("b")
-	private String b;
+	private Boolean b;
 
 	@Column(name = "b_date")
 	@JsonProperty("bDate")
@@ -101,7 +101,7 @@ public class License {
 
 	@Column(name = "b_finished")
 	@JsonProperty("bFinished")
-	private String bFinished;
+	private Boolean bFinished;
 
 	@Column(name = "b_finished_date")
 	@JsonProperty("bFinishedDate")
@@ -109,7 +109,7 @@ public class License {
 
 	@Column(name = "c1")
 	@JsonProperty("c1")
-	private String c1;
+	private Boolean c1;
 
 	@Column(name = "c1_date")
 	@JsonProperty("c1Date")
@@ -117,7 +117,7 @@ public class License {
 
 	@Column(name = "c1_finished")
 	@JsonProperty("c1Finished")
-	private String c1Finished;
+	private Boolean c1Finished;
 
 	@Column(name = "c1_finished_date")
 	@JsonProperty("c1FinishedDate")
@@ -125,7 +125,7 @@ public class License {
 
 	@Column(name = "c")
 	@JsonProperty("c")
-	private String c;
+	private Boolean c;
 
 	@Column(name = "c_date")
 	@JsonProperty("cDate")
@@ -133,7 +133,7 @@ public class License {
 
 	@Column(name = "c_finished")
 	@JsonProperty("cFinished")
-	private String cFinished;
+	private Boolean cFinished;
 
 	@Column(name = "c_finished_date")
 	@JsonProperty("cFinishedDate")
@@ -141,7 +141,7 @@ public class License {
 
 	@Column(name = "d1")
 	@JsonProperty("d1")
-	private String d1;
+	private Boolean d1;
 
 	@Column(name = "d1_date")
 	@JsonProperty("d1Date")
@@ -149,7 +149,7 @@ public class License {
 
 	@Column(name = "d1_finished")
 	@JsonProperty("d1Finished")
-	private String d1Finished;
+	private Boolean d1Finished;
 
 	@Column(name = "d1_finished_date")
 	@JsonProperty("d1FinishedFate")
@@ -157,7 +157,7 @@ public class License {
 
 	@Column(name = "d")
 	@JsonProperty("d")
-	private String d;
+	private Boolean d;
 
 	@Column(name = "d_Date")
 	@JsonProperty("dDate")
@@ -165,7 +165,7 @@ public class License {
 
 	@Column(name = "d_finished")
 	@JsonProperty("dFinished")
-	private String dFinished;
+	private Boolean dFinished;
 
 	@Column(name = "d_finished_date")
 	@JsonProperty("dFinishedDate")
@@ -173,7 +173,7 @@ public class License {
 
 	@Column(name = "be")
 	@JsonProperty("be")
-	private String be;
+	private Boolean be;
 
 	@Column(name = "be_date")
 	@JsonProperty("beDate")
@@ -181,7 +181,7 @@ public class License {
 
 	@Column(name = "be_finished")
 	@JsonProperty("beFinished")
-	private String beFinished;
+	private Boolean beFinished;
 
 	@Column(name = "be_finished_date")
 	@JsonProperty("beFinishedDate")
@@ -189,7 +189,7 @@ public class License {
 
 	@Column(name = "c1e")
 	@JsonProperty("c1e")
-	private String c1e;
+	private Boolean c1e;
 
 	@Column(name = "c1e_date")
 	@JsonProperty("c1eDate")
@@ -197,7 +197,7 @@ public class License {
 
 	@Column(name = "c1e_finished")
 	@JsonProperty("c1eFinished")
-	private String c1eFinished;
+	private Boolean c1eFinished;
 
 	@Column(name = "c1e_finished_date")
 	@JsonProperty("c1eFinishedDate")
@@ -205,7 +205,7 @@ public class License {
 
 	@Column(name = "ce")
 	@JsonProperty("ce")
-	private String ce;
+	private Boolean ce;
 
 	@Column(name = "ce_date")
 	@JsonProperty("ceDate")
@@ -213,7 +213,7 @@ public class License {
 
 	@Column(name = "ce_finished")
 	@JsonProperty("ceFinished")
-	private String ceFinished;
+	private Boolean ceFinished;
 
 	@Column(name = "ce_finished_date")
 	@JsonProperty("ceFinishedDate")
@@ -221,7 +221,7 @@ public class License {
 
 	@Column(name = "d1e")
 	@JsonProperty("d1e")
-	private String d1e;
+	private Boolean d1e;
 
 	@Column(name = "d1e_date")
 	@JsonProperty("d1eDate")
@@ -229,7 +229,7 @@ public class License {
 
 	@Column(name = "d1e_finished")
 	@JsonProperty("d1eFinished")
-	private String d1eFinished;
+	private Boolean d1eFinished;
 
 	@Column(name = "d1e_finished_date")
 	@JsonProperty("d1eFinishedDate")
@@ -237,7 +237,7 @@ public class License {
 
 	@Column(name = "de")
 	@JsonProperty("de")
-	private String de;
+	private Boolean de;
 
 	@Column(name = "de_date")
 	@JsonProperty("deDate")
@@ -245,7 +245,7 @@ public class License {
 
 	@Column(name = "de_finished")
 	@JsonProperty("deFinished")
-	private String deFinished;
+	private Boolean deFinished;
 
 	@Column(name = "de_finished_date")
 	@JsonProperty("deFinishedDate")
@@ -259,7 +259,7 @@ public class License {
 		return id;
 	}
 
-	public String getAm() {
+	public Boolean getAm() {
 		return am;
 	}
 
@@ -267,11 +267,11 @@ public class License {
 		return amDate;
 	}
 
-	public String getAmFinished() {
+	public Boolean getAmFinished() {
 		return amFinished;
 	}
 
-	public String getA1() {
+	public Boolean getA1() {
 		return a1;
 	}
 
@@ -279,7 +279,7 @@ public class License {
 		return a1Date;
 	}
 
-	public String getA1Finished() {
+	public Boolean getA1Finished() {
 		return a1Finished;
 	}
 
@@ -287,7 +287,7 @@ public class License {
 		return a1FinishedDate;
 	}
 
-	public String getA2() {
+	public Boolean getA2() {
 		return a2;
 	}
 
@@ -295,7 +295,7 @@ public class License {
 		return a2Date;
 	}
 
-	public String getA2Finished() {
+	public Boolean getA2Finished() {
 		return a2Finished;
 	}
 
@@ -303,7 +303,7 @@ public class License {
 		return a2FinishedDate;
 	}
 
-	public String getA() {
+	public Boolean getA() {
 		return a;
 	}
 
@@ -311,7 +311,7 @@ public class License {
 		return aDate;
 	}
 
-	public String getaFinished() {
+	public Boolean getaFinished() {
 		return aFinished;
 	}
 
@@ -319,7 +319,7 @@ public class License {
 		return aFinishedDate;
 	}
 
-	public String getB1() {
+	public Boolean getB1() {
 		return b1;
 	}
 
@@ -327,7 +327,7 @@ public class License {
 		return b1Date;
 	}
 
-	public String getB1Finished() {
+	public Boolean getB1Finished() {
 		return b1Finished;
 	}
 
@@ -335,7 +335,7 @@ public class License {
 		return b1FinishedDate;
 	}
 
-	public String getB() {
+	public Boolean getB() {
 		return b;
 	}
 
@@ -343,7 +343,7 @@ public class License {
 		return bDate;
 	}
 
-	public String getbFinished() {
+	public Boolean getbFinished() {
 		return bFinished;
 	}
 
@@ -351,7 +351,7 @@ public class License {
 		return bFinishedDate;
 	}
 
-	public String getC1() {
+	public Boolean getC1() {
 		return c1;
 	}
 
@@ -359,7 +359,7 @@ public class License {
 		return c1Date;
 	}
 
-	public String getC1Finished() {
+	public Boolean getC1Finished() {
 		return c1Finished;
 	}
 
@@ -367,7 +367,7 @@ public class License {
 		return c1FinishedDate;
 	}
 
-	public String getC() {
+	public Boolean getC() {
 		return c;
 	}
 
@@ -375,7 +375,7 @@ public class License {
 		return cDate;
 	}
 
-	public String getcFinished() {
+	public Boolean getcFinished() {
 		return cFinished;
 	}
 
@@ -383,7 +383,7 @@ public class License {
 		return cFinishedDate;
 	}
 
-	public String getD1() {
+	public Boolean getD1() {
 		return d1;
 	}
 
@@ -391,7 +391,7 @@ public class License {
 		return d1Date;
 	}
 
-	public String getD1Finished() {
+	public Boolean getD1Finished() {
 		return d1Finished;
 	}
 
@@ -399,7 +399,7 @@ public class License {
 		return d1FinishedFate;
 	}
 
-	public String getD() {
+	public Boolean getD() {
 		return d;
 	}
 
@@ -407,7 +407,7 @@ public class License {
 		return dDate;
 	}
 
-	public String getdFinished() {
+	public Boolean getdFinished() {
 		return dFinished;
 	}
 
@@ -415,7 +415,7 @@ public class License {
 		return dFinishedDate;
 	}
 
-	public String getBe() {
+	public Boolean getBe() {
 		return be;
 	}
 
@@ -423,7 +423,7 @@ public class License {
 		return beDate;
 	}
 
-	public String getBeFinished() {
+	public Boolean getBeFinished() {
 		return beFinished;
 	}
 
@@ -431,7 +431,7 @@ public class License {
 		return beFinishedDate;
 	}
 
-	public String getC1e() {
+	public Boolean getC1e() {
 		return c1e;
 	}
 
@@ -439,7 +439,7 @@ public class License {
 		return c1eDate;
 	}
 
-	public String getC1eFinished() {
+	public Boolean getC1eFinished() {
 		return c1eFinished;
 	}
 
@@ -447,7 +447,7 @@ public class License {
 		return c1eFinishedDate;
 	}
 
-	public String getCe() {
+	public Boolean getCe() {
 		return ce;
 	}
 
@@ -455,7 +455,7 @@ public class License {
 		return ceDate;
 	}
 
-	public String getCeFinished() {
+	public Boolean getCeFinished() {
 		return ceFinished;
 	}
 
@@ -463,7 +463,7 @@ public class License {
 		return ceFinishedDate;
 	}
 
-	public String getD1e() {
+	public Boolean getD1e() {
 		return d1e;
 	}
 
@@ -471,7 +471,7 @@ public class License {
 		return d1eDate;
 	}
 
-	public String getD1eFinished() {
+	public Boolean getD1eFinished() {
 		return d1eFinished;
 	}
 
@@ -479,7 +479,7 @@ public class License {
 		return d1eFinishedDate;
 	}
 
-	public String getDe() {
+	public Boolean getDe() {
 		return de;
 	}
 
@@ -487,7 +487,7 @@ public class License {
 		return deDate;
 	}
 
-	public String getDeFinished() {
+	public Boolean getDeFinished() {
 		return deFinished;
 	}
 
@@ -583,64 +583,65 @@ public class License {
 	public static class Builder {
 
 		private String id;
-		private String am;
+		private Boolean am;
 		private String amDate;
-		private String amFinished;
-		private String a1;
+		private Boolean amFinished;
+		private String amFinishedDate;
+		private Boolean a1;
 		private String a1Date;
-		private String a1Finished;
+		private Boolean a1Finished;
 		private String a1FinishedDate;
-		private String a2;
+		private Boolean a2;
 		private String a2Date;
-		private String a2Finished;
+		private Boolean a2Finished;
 		private String a2FinishedDate;
-		private String a;
+		private Boolean a;
 		private String aDate;
-		private String aFinished;
+		private Boolean aFinished;
 		private String aFinishedDate;
-		private String b1;
+		private Boolean b1;
 		private String b1Date;
-		private String b1Finished;
+		private Boolean b1Finished;
 		private String b1FinishedDate;
-		private String b;
+		private Boolean b;
 		private String bDate;
-		private String bFinished;
+		private Boolean bFinished;
 		private String bFinishedDate;
-		private String c1;
+		private Boolean c1;
 		private String c1Date;
-		private String c1Finished;
+		private Boolean c1Finished;
 		private String c1FinishedDate;
-		private String c;
+		private Boolean c;
 		private String cDate;
-		private String cFinished;
+		private Boolean cFinished;
 		private String cFinishedDate;
-		private String d1;
+		private Boolean d1;
 		private String d1Date;
-		private String d1Finished;
+		private Boolean d1Finished;
 		private String d1FinishedFate;
-		private String d;
+		private Boolean d;
 		private String dDate;
-		private String dFinished;
+		private Boolean dFinished;
 		private String dFinishedDate;
-		private String be;
+		private Boolean be;
 		private String beDate;
-		private String beFinished;
+		private Boolean beFinished;
 		private String beFinishedDate;
-		private String c1e;
+		private Boolean c1e;
 		private String c1eDate;
-		private String c1eFinished;
+		private Boolean c1eFinished;
 		private String c1eFinishedDate;
-		private String ce;
+		private Boolean ce;
 		private String ceDate;
-		private String ceFinished;
+		private Boolean ceFinished;
 		private String ceFinishedDate;
-		private String d1e;
+		private Boolean d1e;
 		private String d1eDate;
-		private String d1eFinished;
+		private Boolean d1eFinished;
 		private String d1eFinishedDate;
-		private String de;
+		private Boolean de;
 		private String deDate;
-		private String deFinished;
+		private Boolean deFinished;
 		private String deFinishedDate;
 
 		public Builder id(String id) {
@@ -648,7 +649,7 @@ public class License {
 			return this;
 		}
 
-		public Builder am(String am) {
+		public Builder am(Boolean am) {
 			this.am = am;
 			return this;
 		}
@@ -658,12 +659,12 @@ public class License {
 			return this;
 		}
 
-		public Builder amFinished(String amFinished) {
+		public Builder amFinished(Boolean amFinished) {
 			this.amFinished = amFinished;
 			return this;
 		}
 
-		public Builder a1(String a1) {
+		public Builder a1(Boolean a1) {
 			this.a1 = a1;
 			return this;
 		}
@@ -673,7 +674,7 @@ public class License {
 			return this;
 		}
 
-		public Builder a1Finished(String a1Finished) {
+		public Builder a1Finished(Boolean a1Finished) {
 			this.a1Finished = a1Finished;
 			return this;
 		}
@@ -683,7 +684,7 @@ public class License {
 			return this;
 		}
 
-		public Builder a2(String a2) {
+		public Builder a2(Boolean a2) {
 			this.a2 = a2;
 			return this;
 		}
@@ -693,7 +694,7 @@ public class License {
 			return this;
 		}
 
-		public Builder a2Finished(String a2Finished) {
+		public Builder a2Finished(Boolean a2Finished) {
 			this.a2Finished = a2Finished;
 			return this;
 		}
@@ -703,7 +704,7 @@ public class License {
 			return this;
 		}
 
-		public Builder a(String a) {
+		public Builder a(Boolean a) {
 			this.a = a;
 			return this;
 		}
@@ -713,7 +714,7 @@ public class License {
 			return this;
 		}
 
-		public Builder aFinished(String aFinished) {
+		public Builder aFinished(Boolean aFinished) {
 			this.aFinished = aFinished;
 			return this;
 		}
@@ -723,7 +724,12 @@ public class License {
 			return this;
 		}
 
-		public Builder b1(String b1) {
+		public Builder amFinishedDate(String amFinishedDate) {
+			this.amFinishedDate = amFinishedDate;
+			return this;
+		}
+
+		public Builder b1(Boolean b1) {
 			this.b1 = b1;
 			return this;
 		}
@@ -733,7 +739,7 @@ public class License {
 			return this;
 		}
 
-		public Builder b1Finished(String b1Finished) {
+		public Builder b1Finished(Boolean b1Finished) {
 			this.b1Finished = b1Finished;
 			return this;
 		}
@@ -743,7 +749,7 @@ public class License {
 			return this;
 		}
 
-		public Builder b(String b) {
+		public Builder b(Boolean b) {
 			this.b = b;
 			return this;
 		}
@@ -753,7 +759,7 @@ public class License {
 			return this;
 		}
 
-		public Builder bFinished(String bFinished) {
+		public Builder bFinished(Boolean bFinished) {
 			this.bFinished = bFinished;
 			return this;
 		}
@@ -763,7 +769,7 @@ public class License {
 			return this;
 		}
 
-		public Builder c1(String c1) {
+		public Builder c1(Boolean c1) {
 			this.c1 = c1;
 			return this;
 		}
@@ -773,7 +779,7 @@ public class License {
 			return this;
 		}
 
-		public Builder c1Finished(String c1Finished) {
+		public Builder c1Finished(Boolean c1Finished) {
 			this.c1Finished = c1Finished;
 			return this;
 		}
@@ -783,7 +789,7 @@ public class License {
 			return this;
 		}
 
-		public Builder c(String c) {
+		public Builder c(Boolean c) {
 			this.c = c;
 			return this;
 		}
@@ -793,7 +799,7 @@ public class License {
 			return this;
 		}
 
-		public Builder cFinished(String cFinished) {
+		public Builder cFinished(Boolean cFinished) {
 			this.cFinished = cFinished;
 			return this;
 		}
@@ -803,7 +809,7 @@ public class License {
 			return this;
 		}
 
-		public Builder d1(String d1) {
+		public Builder d1(Boolean d1) {
 			this.d1 = d1;
 			return this;
 		}
@@ -813,7 +819,7 @@ public class License {
 			return this;
 		}
 
-		public Builder d1Finished(String d1Finished) {
+		public Builder d1Finished(Boolean d1Finished) {
 			this.d1Finished = d1Finished;
 			return this;
 		}
@@ -823,7 +829,7 @@ public class License {
 			return this;
 		}
 
-		public Builder d(String d) {
+		public Builder d(Boolean d) {
 			this.d = d;
 			return this;
 		}
@@ -833,7 +839,7 @@ public class License {
 			return this;
 		}
 
-		public Builder dFinished(String dFinished) {
+		public Builder dFinished(Boolean dFinished) {
 			this.dFinished = dFinished;
 			return this;
 		}
@@ -843,7 +849,7 @@ public class License {
 			return this;
 		}
 
-		public Builder be(String be) {
+		public Builder be(Boolean be) {
 			this.be = be;
 			return this;
 		}
@@ -853,7 +859,7 @@ public class License {
 			return this;
 		}
 
-		public Builder beFinished(String beFinished) {
+		public Builder beFinished(Boolean beFinished) {
 			this.beFinished = beFinished;
 			return this;
 		}
@@ -863,7 +869,7 @@ public class License {
 			return this;
 		}
 
-		public Builder c1e(String c1e) {
+		public Builder c1e(Boolean c1e) {
 			this.c1e = c1e;
 			return this;
 		}
@@ -873,7 +879,7 @@ public class License {
 			return this;
 		}
 
-		public Builder c1eFinished(String c1eFinished) {
+		public Builder c1eFinished(Boolean c1eFinished) {
 			this.c1eFinished = c1eFinished;
 			return this;
 		}
@@ -883,7 +889,7 @@ public class License {
 			return this;
 		}
 
-		public Builder ce(String ce) {
+		public Builder ce(Boolean ce) {
 			this.ce = ce;
 			return this;
 		}
@@ -893,7 +899,7 @@ public class License {
 			return this;
 		}
 
-		public Builder ceFinished(String ceFinished) {
+		public Builder ceFinished(Boolean ceFinished) {
 			this.ceFinished = ceFinished;
 			return this;
 		}
@@ -903,7 +909,7 @@ public class License {
 			return this;
 		}
 
-		public Builder d1e(String d1e) {
+		public Builder d1e(Boolean d1e) {
 			this.d1e = d1e;
 			return this;
 		}
@@ -913,7 +919,7 @@ public class License {
 			return this;
 		}
 
-		public Builder d1eFinished(String d1eFinished) {
+		public Builder d1eFinished(Boolean d1eFinished) {
 			this.d1eFinished = d1eFinished;
 			return this;
 		}
@@ -923,7 +929,7 @@ public class License {
 			return this;
 		}
 
-		public Builder de(String de) {
+		public Builder de(Boolean de) {
 			this.de = de;
 			return this;
 		}
@@ -933,7 +939,7 @@ public class License {
 			return this;
 		}
 
-		public Builder deFinished(String deFinished) {
+		public Builder deFinished(Boolean deFinished) {
 			this.deFinished = deFinished;
 			return this;
 		}

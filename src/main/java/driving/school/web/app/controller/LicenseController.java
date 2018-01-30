@@ -31,7 +31,7 @@ public class LicenseController {
 		return null;
 	}
 
-	@RequestMapping(value = "/license", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/license", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public License createLicense(@RequestBody License license) {
 		try {
 			license = licenseService.createLicense(license);
@@ -44,7 +44,7 @@ public class LicenseController {
 
 	}
 
-	@RequestMapping(value = "/license", method = RequestMethod.PUT, headers = "Accept=application/json")
+	@RequestMapping(value = "/license", method = RequestMethod.POST, headers = "Accept=application/json")
 	public License updateLicense(@RequestBody License license) {
 		try {
 			license = licenseService.updateLicense(license);

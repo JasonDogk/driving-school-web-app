@@ -61,10 +61,10 @@ public class DriverController {
 		return driver;
 	}
 
-	@RequestMapping(value = "/driver", method = RequestMethod.PUT, headers = "Accept=application/json")
-	public Driver createDriver(@RequestBody Driver driver) {
+	@RequestMapping(value = "/driver", method = RequestMethod.POST, headers = "Accept=application/json")
+	public Driver updateDriver(@RequestBody Driver driver) {
 		try {
-			driver = driverService.createDriver(driver);
+			driver = driverService.updateDriver(driver);
 			return driver;
 		} catch (MissingRequiredParamsException e) {
 			e.printStackTrace();
@@ -72,10 +72,10 @@ public class DriverController {
 		return null;
 	}
 
-	@RequestMapping(value = "/driver", method = RequestMethod.POST, headers = "Accept=application/json")
-	public Driver updateDriver(@RequestBody Driver driver) {
+	@RequestMapping(value = "/driver", method = RequestMethod.PUT, headers = "Accept=application/json")
+	public Driver createDriver(@RequestBody Driver driver) {
 		try {
-			driver = driverService.updateDriver(driver);
+			driver = driverService.createDriver(driver);
 			return driver;
 		} catch (MissingRequiredParamsException e) {
 			e.printStackTrace();
