@@ -55,7 +55,7 @@ public class UtilLib {
 			if (object instanceof Driver) {
 				Driver driver = (Driver) object;
 				if ((isEmpty(driver.getFirstName())) || (isEmpty(driver.getLastName()))
-						|| (isEmpty(driver.getPhoneNumber()))) {
+						|| (isEmpty(driver.getPhoneNumber())) || (isEmpty(driver.getAfm()))) {
 					return false;
 				} else {
 					return true;

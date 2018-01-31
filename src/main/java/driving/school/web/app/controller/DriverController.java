@@ -61,6 +61,20 @@ public class DriverController {
 		return driver;
 	}
 
+	@RequestMapping(value = "/driver/afm/{afm}", method = RequestMethod.GET, headers = "Accept=application/json")
+	public Driver getDriverByAfm(@PathVariable String afm) {
+
+		Driver driver = null;
+		try {
+			driver = driverService.getDriverByAfm(afm);
+		} catch (EmptyObjectException e) {
+			e.printStackTrace();
+		} catch (DataNotFoundException e) {
+			e.printStackTrace();
+		}
+		return driver;
+	}
+
 	@RequestMapping(value = "/driver", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Driver updateDriver(@RequestBody Driver driver) {
 		try {

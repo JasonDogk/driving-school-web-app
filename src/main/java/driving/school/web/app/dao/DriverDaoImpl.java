@@ -52,6 +52,22 @@ public class DriverDaoImpl implements DriverDao {
 	}
 
 	@Override
+	public Driver getDriverByAfm(String afm) {
+
+		try {
+			@SuppressWarnings("unchecked")
+			TypedQuery<Driver> query = sessionFactory.getCurrentSession()
+					.createQuery("from Driver d WHERE d.afm = :afm");
+			query.setParameter("afm", afm);
+			return query.getSingleResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+
+	@Override
 	public Driver createDriver(Driver driver) {
 		Session session = null;
 		Transaction transaction = null;

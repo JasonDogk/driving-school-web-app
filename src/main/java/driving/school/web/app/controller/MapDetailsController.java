@@ -46,7 +46,7 @@ public class MapDetailsController {
 
 	}
 
-	@RequestMapping(value = "/mapDetails", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/mapDetails", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public MapDetails createMapDetails(@RequestBody MapDetails mapDetails) {
 		try {
 			mapDetails = mapDetailsService.createMapDetails(mapDetails);
@@ -59,7 +59,7 @@ public class MapDetailsController {
 
 	}
 
-	@RequestMapping(value = "/mapDetails", method = RequestMethod.PUT, headers = "Accept=application/json")
+	@RequestMapping(value = "/mapDetails", method = RequestMethod.POST, headers = "Accept=application/json")
 	public MapDetails updateMapDetails(@RequestBody MapDetails mapDetails)
 			throws EmptyObjectException, MissingRequiredParamsException {
 		mapDetails = mapDetailsService.updateMapDetails(mapDetails);

@@ -12,6 +12,8 @@ public interface DriverDao {
 
 	Driver getDriverById(String driverId);
 
+	Driver getDriverByAfm(String afm);
+
 	Driver createDriver(Driver driver);
 
 	Driver updateDriver(Driver driver);

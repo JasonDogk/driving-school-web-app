@@ -70,6 +70,21 @@ public class DriverServiceImpl implements DriverService {
 	}
 
 	@Override
+	public Driver getDriverByAfm(String afm) throws EmptyObjectException, DataNotFoundException {
+
+		if (UtilLib.isEmpty(afm)) {
+			throw new EmptyObjectException("Provided Driver afm is empty/null");
+		}
+
+		Driver driver = driverDao.getDriverByAfm(afm);
+
+		if (UtilLib.isEmpty(driver)) {
+			throw new DataNotFoundException("No Drivers exist in Database");
+		} else
+			return driver;
+	}
+
+	@Override
 	public Driver createDriver(Driver driver) throws MissingRequiredParamsException {
 
 		String driverId = UUID.randomUUID().toString();
@@ -87,7 +102,7 @@ public class DriverServiceImpl implements DriverService {
 	@Override
 	public Driver updateDriver(Driver driver) throws MissingRequiredParamsException {
 
-		if (UtilLib.hasAllTheMandatoryFields(driver)) {
+		if (UtilLib.hasAllTheMandatoryFields(driver) && (driver.getId() != null)) {
 			return driverDao.updateDriver(driver);
 		} else {
 			throw new MissingRequiredParamsException("Not All mandatory fields completed to create a driver");

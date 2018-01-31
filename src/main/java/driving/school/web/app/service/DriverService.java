@@ -17,6 +17,8 @@ public interface DriverService {
 
 	Driver getDriverById(String driverId) throws EmptyObjectException, DataNotFoundException;
 
+	Driver getDriverByAfm(String afm) throws EmptyObjectException, DataNotFoundException;
+
 	Driver createDriver(Driver driver) throws MissingRequiredParamsException;
 
 	Driver updateDriver(Driver driver) throws MissingRequiredParamsException;
