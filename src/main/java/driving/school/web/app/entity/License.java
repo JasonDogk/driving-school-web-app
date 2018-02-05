@@ -152,8 +152,8 @@ public class License {
 	private Boolean d1Finished;
 
 	@Column(name = "d1_finished_date")
-	@JsonProperty("d1FinishedFate")
-	private String d1FinishedFate;
+	@JsonProperty("d1FinishedDate")
+	private String d1FinishedDate;
 
 	@Column(name = "d")
 	@JsonProperty("d")
@@ -395,8 +395,8 @@ public class License {
 		return d1Finished;
 	}
 
-	public String getD1FinishedFate() {
-		return d1FinishedFate;
+	public String getD1FinishedDate() {
+		return d1FinishedDate;
 	}
 
 	public Boolean getD() {
@@ -531,7 +531,7 @@ public class License {
 		this.d1 = builder.d1;
 		this.d1Date = builder.d1Date;
 		this.d1Finished = builder.d1Finished;
-		this.d1FinishedFate = builder.d1FinishedFate;
+		this.d1FinishedDate = builder.d1FinishedDate;
 		this.d = builder.d;
 		this.dDate = builder.dDate;
 		this.dFinished = builder.dFinished;
@@ -570,7 +570,7 @@ public class License {
 				+ ", bFinishedDate=" + bFinishedDate + ", c1=" + c1 + ", c1Date=" + c1Date + ", c1Finished="
 				+ c1Finished + ", c=" + c + ", cDate=" + cDate + ", cFinished=" + cFinished + ", cFinishedDate="
 				+ cFinishedDate + ", d1=" + d1 + ", d1Date=" + d1Date + ", d1Finished=" + d1Finished
-				+ ", d1FinishedFate=" + d1FinishedFate + ", d=" + d + ", dDate=" + dDate + ", dFinished=" + dFinished
+				+ ", d1FinishedDate=" + d1FinishedDate + ", d=" + d + ", dDate=" + dDate + ", dFinished=" + dFinished
 				+ ", dFinishedDate=" + dFinishedDate + ", be=" + be + ", beDate=" + beDate + ", beFinished="
 				+ beFinished + ", beFinishedDate=" + beFinishedDate + ", c1e=" + c1e + ", c1eDate=" + c1eDate
 				+ ", c1eFinished=" + c1eFinished + ", c1eFinishedDate=" + c1eFinishedDate + ", ce=" + ce + ", ceDate="
@@ -618,7 +618,7 @@ public class License {
 		private Boolean d1;
 		private String d1Date;
 		private Boolean d1Finished;
-		private String d1FinishedFate;
+		private String d1FinishedDate;
 		private Boolean d;
 		private String dDate;
 		private Boolean dFinished;
@@ -824,8 +824,8 @@ public class License {
 			return this;
 		}
 
-		public Builder d1FinishedFate(String d1FinishedFate) {
-			this.d1FinishedFate = d1FinishedFate;
+		public Builder d1FinishedDate(String d1FinishedDate) {
+			this.d1FinishedDate = d1FinishedDate;
 			return this;
 		}
 

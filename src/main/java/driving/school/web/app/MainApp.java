@@ -19,6 +19,7 @@ import driving.school.web.app.service.AdministrationTableService;
 import driving.school.web.app.service.DriverService;
 import driving.school.web.app.service.LicenseService;
 import driving.school.web.app.service.MapDetailsService;
+import driving.school.web.app.service.StatisticsService;
 
 /**
  * @author imssbora
@@ -34,6 +35,15 @@ public class MainApp {
 		AdministrationTableService administrationService = context.getBean(AdministrationTableService.class);
 		LicenseService LicenseService = context.getBean(LicenseService.class);
 		MapDetailsService mapDetailsService = context.getBean(MapDetailsService.class);
+		StatisticsService statisticsService = context.getBean(StatisticsService.class);
+
+		statisticsService.getMaleFemaleLast3Years();
+
+		statisticsService.getMaleFemaleThisYear();
+
+		// statisticsService.getLicensesThisYear();
+
+		statisticsService.getRegistrationsThisYear();
 
 		Driver driver1 = new Driver.Builder().firstName("iasonas").lastName("dogkas").afm("afm-" + UUID.randomUUID())
 				.phoneNumber("6973636636").build();

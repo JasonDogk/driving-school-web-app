@@ -1,3 +1,4 @@
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\entity\Statistics.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\DriverService.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\InvokeRequests.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\DriverDao.java
@@ -10,7 +11,10 @@ C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\exceptions\DataNotFoundException.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\DriverDaoImpl.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\AdministrationTableDao.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\StatisticsService.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\controller\LicenseController.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\StatisticsDao.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\StatisticsDaoImpl.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\exceptions\LicenseNotFoundException.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\config\AppInitializer.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\LicenseServiceImpl.java
@@ -24,6 +28,7 @@ C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\MapDetailsService.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\exceptions\DriverNotFoundException.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\entity\Driver.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\StatisticsServiceImpl.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\MainApp.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\config\AppConfig.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\controller\AdministrationTableController.java
@@ -34,3 +39,4 @@ C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\controller\MapDetailsController.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\dao\LicenseDaoImpl.java
 C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\service\MapDetailsServiceImpl.java
+C:\Users\User\STS_Spring\workspaces\driving-school-web-app\src\main\java\driving\school\web\app\controller\StatisticsController.java

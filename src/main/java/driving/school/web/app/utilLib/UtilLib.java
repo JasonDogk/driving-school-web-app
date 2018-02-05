@@ -68,6 +68,13 @@ public class UtilLib {
 				} else {
 					return true;
 				}
+			} else if (object instanceof License) {
+				License license = (License) object;
+				if (isEmpty(license.getId())) {
+					return false;
+				} else {
+					return true;
+				}
 			}
 		}
 		return false;
