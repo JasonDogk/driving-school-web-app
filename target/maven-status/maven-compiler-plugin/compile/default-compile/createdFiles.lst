@@ -1,5 +1,6 @@
 driving\school\web\app\InvokeRequests.class
 driving\school\web\app\dao\MapDetailsDao.class
+driving\school\web\app\entity\Statistics$RegistriesThisYears.class
 driving\school\web\app\service\StatisticsService.class
 driving\school\web\app\exceptions\EmptyObjectException.class
 driving\school\web\app\entity\License.class
@@ -10,6 +11,7 @@ driving\school\web\app\config\AppConfig.class
 driving\school\web\app\entity\MapDetails$1.class
 driving\school\web\app\service\DriverServiceImpl.class
 driving\school\web\app\controller\LicenseController.class
+driving\school\web\app\entity\Statistics$StartingEndingRegistriesThisYear.class
 driving\school\web\app\controller\MapDetailsController.class
 driving\school\web\app\service\LicenseServiceImpl.class
 driving\school\web\app\service\DriverService.class
@@ -18,6 +20,7 @@ driving\school\web\app\service\StatisticsServiceImpl.class
 driving\school\web\app\service\AdministrationTableServiceImpl.class
 driving\school\web\app\service\LicenseService.class
 driving\school\web\app\dao\DriverDaoImpl.class
+driving\school\web\app\entity\Statistics$LicensesThisYears.class
 driving\school\web\app\controller\DriverController.class
 driving\school\web\app\config\AppInitializer.class
 driving\school\web\app\entity\Driver$1.class
@@ -25,6 +28,7 @@ driving\school\web\app\dao\MapDetailsDaoImpl.class
 driving\school\web\app\MainApp.class
 driving\school\web\app\entity\License$Builder.class
 driving\school\web\app\entity\MapDetails.class
+driving\school\web\app\entity\Statistics$EndingRegistriesThisYears.class
 driving\school\web\app\controller\AdministrationTableController.class
 driving\school\web\app\service\MapDetailsServiceImpl.class
 driving\school\web\app\entity\LoginDriver$Builder.class
@@ -47,6 +51,7 @@ driving\school\web\app\dao\LicenseDaoImpl.class
 driving\school\web\app\entity\License$1.class
 driving\school\web\app\exceptions\DriverNotFoundException.class
 driving\school\web\app\entity\AdministrationTable$1.class
+driving\school\web\app\entity\Statistics$StartingRegistriesThisYears.class
 driving\school\web\app\entity\AdministrationTable.class
 driving\school\web\app\entity\LoginDriver.class
 driving\school\web\app\entity\Statistics$MaleFemaleLast3Years.class

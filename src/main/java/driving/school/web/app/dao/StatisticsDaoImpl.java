@@ -64,6 +64,8 @@ public class StatisticsDaoImpl implements StatisticsDao {
 					.maleOfLastYear(maleOfLastYear).femaleOfLastYear(femaleOfLastYear).lastToLastYear(lastToLastYear)
 					.maleOfLastToLastYear(maleOfLastToLastYear).femaleOfLastToLastYear(femaleOfLastToLastYear).build();
 
+			System.out.println("skato1 " + statistics.toString());
+
 			return statistics;
 		} else {
 			return null;
@@ -131,7 +133,7 @@ public class StatisticsDaoImpl implements StatisticsDao {
 					+ "'AND CE = 'true' THEN 1 ELSE 0 END) AS CEForThisYear," + "SUM (CASE WHEN d1e_date LIKE '%"
 					+ currentYearAge + "'AND D1E = 'true' THEN 1 ELSE 0 END) AS D1EForThisYear,"
 					+ "SUM (CASE WHEN de_date LIKE '%" + currentYearAge
-					+ "'AND DE = 'true' THEN 1 ELSE 0 END) AS DEForThisYear" + " FROM driver_licenses";
+					+ "'AND DE = 'true' THEN 1 ELSE 0 END) AS DEForThisYear" + " FROM License";
 
 			// @formatter:on
 
@@ -139,21 +141,21 @@ public class StatisticsDaoImpl implements StatisticsDao {
 			List<Object[]> query = sessionFactory.getCurrentSession().createQuery(queryString).getResultList();
 			Integer.valueOf(String.valueOf(query.get(0)[0]));
 
-			Integer aMForThisYear = Integer.valueOf(String.valueOf(query.get(0)[1]));
-			Integer a1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[2]));
-			Integer a2ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[3]));
-			Integer aForThisYear = Integer.valueOf(String.valueOf(query.get(0)[4]));
-			Integer b1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[5]));
-			Integer bForThisYear = Integer.valueOf(String.valueOf(query.get(0)[6]));
-			Integer cForThisYear = Integer.valueOf(String.valueOf(query.get(0)[7]));
-			Integer c1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[8]));
-			Integer d1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[9]));
-			Integer dForThisYear = Integer.valueOf(String.valueOf(query.get(0)[10]));
-			Integer bEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[11]));
-			Integer c1EForThisYear = Integer.valueOf(String.valueOf(query.get(0)[12]));
-			Integer cEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[13]));
-			Integer d1EForThisYear = Integer.valueOf(String.valueOf(query.get(0)[14]));
-			Integer dEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[15]));
+			Integer aMForThisYear = Integer.valueOf(String.valueOf(query.get(0)[0]));
+			Integer a1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[1]));
+			Integer a2ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[2]));
+			Integer aForThisYear = Integer.valueOf(String.valueOf(query.get(0)[3]));
+			Integer b1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[4]));
+			Integer bForThisYear = Integer.valueOf(String.valueOf(query.get(0)[5]));
+			Integer cForThisYear = Integer.valueOf(String.valueOf(query.get(0)[6]));
+			Integer c1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[7]));
+			Integer d1ForThisYear = Integer.valueOf(String.valueOf(query.get(0)[8]));
+			Integer dForThisYear = Integer.valueOf(String.valueOf(query.get(0)[9]));
+			Integer bEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[10]));
+			Integer c1EForThisYear = Integer.valueOf(String.valueOf(query.get(0)[11]));
+			Integer cEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[12]));
+			Integer d1EForThisYear = Integer.valueOf(String.valueOf(query.get(0)[13]));
+			Integer dEForThisYear = Integer.valueOf(String.valueOf(query.get(0)[14]));
 
 			Statistics statistics = new Statistics.LicensesThisYears().aMForThisYear(aMForThisYear)
 					.a1ForThisYear(a1ForThisYear).a2ForThisYear(a2ForThisYear).aForThisYear(aForThisYear)
@@ -269,7 +271,7 @@ public class StatisticsDaoImpl implements StatisticsDao {
 						+ license.toLowerCase() + "_date LIKE '%/11/" + currentYearAge
 						+ "' THEN 1 ELSE 0 END) AS novemberStartingRegistries," + "SUM (CASE WHEN "
 						+ license.toLowerCase() + "_date LIKE '%/12/" + currentYearAge
-						+ "' THEN 1 ELSE 0 END) AS decemberStartingRegistries" + " FROM driver_licenses";
+						+ "' THEN 1 ELSE 0 END) AS decemberStartingRegistries" + " FROM License";
 
 				// @formatter:on
 				@SuppressWarnings("unchecked")
@@ -288,6 +290,8 @@ public class StatisticsDaoImpl implements StatisticsDao {
 				novemberRegistries += Integer.valueOf(String.valueOf(query.get(0)[10]));
 				decemberRegistries += Integer.valueOf(String.valueOf(query.get(0)[11]));
 			}
+
+			System.err.println("para polla skata janauary " + januaryRegistries + februaryRegistries);
 
 			Statistics statistics = new Statistics.StartingRegistriesThisYears()
 					.januaryStartingRegistries(januaryRegistries).februaryStartingRegistries(februaryRegistries)
@@ -351,7 +355,7 @@ public class StatisticsDaoImpl implements StatisticsDao {
 						+ "_finished_date LIKE '%/11/" + currentYearAge
 						+ "' THEN 1 ELSE 0 END) AS novemberEndingRegistries," + "SUM (CASE WHEN "
 						+ license.toLowerCase() + "_finished_date LIKE '%/12/" + currentYearAge
-						+ "' THEN 1 ELSE 0 END) AS decemberEndingRegistries" + " FROM driver_licenses";
+						+ "' THEN 1 ELSE 0 END) AS decemberEndingRegistries" + " FROM License";
 
 				// @formatter:on
 				@SuppressWarnings("unchecked")

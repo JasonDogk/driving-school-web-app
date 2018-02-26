@@ -20,6 +20,9 @@ public class StatisticsController {
 		Statistics maleFemaleLast3Years = null;
 		try {
 			maleFemaleLast3Years = statisticsService.getMaleFemaleLast3Years();
+
+			System.out.println("skato3 " + maleFemaleLast3Years.toString());
+
 		} catch (DataNotFoundException e) {
 			e.printStackTrace();
 
@@ -43,7 +46,7 @@ public class StatisticsController {
 	public Statistics getLicensesThisYear() {
 		Statistics licensesThisYear = null;
 		try {
-			licensesThisYear = statisticsService.getMaleFemaleThisYear();
+			licensesThisYear = statisticsService.getLicensesThisYear();
 		} catch (DataNotFoundException e) {
 			e.printStackTrace();
 

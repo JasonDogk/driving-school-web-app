@@ -27,6 +27,10 @@ public class License {
 	@JsonProperty("amFinished")
 	private Boolean amFinished;
 
+	@Column(name = "am_finished_date")
+	@JsonProperty("amFinishedDate")
+	private String amFinishedDate;
+
 	@Column(name = "a1")
 	@JsonProperty("a1")
 	private Boolean a1;
@@ -271,6 +275,10 @@ public class License {
 		return amFinished;
 	}
 
+	public String getAmFinishedDate() {
+		return amFinishedDate;
+	}
+
 	public Boolean getA1() {
 		return a1;
 	}
@@ -500,6 +508,7 @@ public class License {
 		this.am = builder.am;
 		this.amDate = builder.amDate;
 		this.amFinished = builder.amFinished;
+		this.amFinishedDate = builder.amFinishedDate;
 		this.a1 = builder.a1;
 		this.a1Date = builder.a1Date;
 		this.a1Finished = builder.a1Finished;
@@ -557,27 +566,6 @@ public class License {
 		this.deFinished = builder.deFinished;
 		this.deFinishedDate = builder.deFinishedDate;
 
-	}
-
-	@Override
-	public String toString() {
-		return "DriverLicenses [id=" + id + ", am=" + am + ", amDate=" + amDate + ", amFinished=" + amFinished + ", a1="
-				+ a1 + ", a1Date=" + a1Date + ", a1Finished=" + a1Finished + ", a1FinishedDate=" + a1FinishedDate
-				+ ", a2=" + a2 + ", a2Date=" + a2Date + ", a2Finished=" + a2Finished + ", a2FinishedDate="
-				+ a2FinishedDate + ", a=" + a + ", aDate=" + aDate + ", aFinished=" + aFinished + ", aFinishedDate="
-				+ aFinishedDate + ", b1=" + b1 + ", b1Date=" + b1Date + ", b1Finished=" + b1Finished
-				+ ", b1FinishedDate=" + b1FinishedDate + ", b=" + b + ", bDate=" + bDate + ", bFinished=" + bFinished
-				+ ", bFinishedDate=" + bFinishedDate + ", c1=" + c1 + ", c1Date=" + c1Date + ", c1Finished="
-				+ c1Finished + ", c=" + c + ", cDate=" + cDate + ", cFinished=" + cFinished + ", cFinishedDate="
-				+ cFinishedDate + ", d1=" + d1 + ", d1Date=" + d1Date + ", d1Finished=" + d1Finished
-				+ ", d1FinishedDate=" + d1FinishedDate + ", d=" + d + ", dDate=" + dDate + ", dFinished=" + dFinished
-				+ ", dFinishedDate=" + dFinishedDate + ", be=" + be + ", beDate=" + beDate + ", beFinished="
-				+ beFinished + ", beFinishedDate=" + beFinishedDate + ", c1e=" + c1e + ", c1eDate=" + c1eDate
-				+ ", c1eFinished=" + c1eFinished + ", c1eFinishedDate=" + c1eFinishedDate + ", ce=" + ce + ", ceDate="
-				+ ceDate + ", ceFinished=" + ceFinished + ", ceFinishedDate=" + ceFinishedDate + ", d1e=" + d1e
-				+ ", d1eDate=" + d1eDate + ", d1eFinished=" + d1eFinished + ", d1eFinishedDate=" + d1eFinishedDate
-				+ ", de=" + de + ", deDate=" + deDate + ", deFinished=" + deFinished + ", deFinishedDate="
-				+ deFinishedDate + "]";
 	}
 
 	public static class Builder {

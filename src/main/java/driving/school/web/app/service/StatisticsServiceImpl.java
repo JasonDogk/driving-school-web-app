@@ -20,6 +20,8 @@ public class StatisticsServiceImpl implements StatisticsService {
 
 		Statistics statistics = statisticsDao.getMaleFemaleLast3Years();
 
+		System.out.println("skato2 " + statistics.toString());
+
 		if (UtilLib.isEmpty(statistics)) {
 			throw new DataNotFoundException("No statistics retrieved");
 		}
@@ -66,9 +68,14 @@ public class StatisticsServiceImpl implements StatisticsService {
 	@Override
 	public Statistics getStartingEndingLessonsPerMonthThisYear() throws DataNotFoundException {
 
-		Statistics statistics1 = statisticsDao.getStartingLessonsPerMonthForThisYear();
-		Statistics statistics2 = statisticsDao.getEndingLessonsPerMonthForThisYear();
+		Statistics startingStatistics = statisticsDao.getStartingLessonsPerMonthForThisYear();
+		System.err.println("skato1 " + startingStatistics.toString());
+		Statistics endingStatistics = statisticsDao.getEndingLessonsPerMonthForThisYear();
+		System.err.println("skato2 " + endingStatistics.toString());
+		Statistics statistics = new Statistics.StartingEndingRegistriesThisYear()
+				.startingEndingRegistriesThisYear(startingStatistics, endingStatistics).build();
 
+		System.err.println("skato3 " + statistics.toString());
 		if (UtilLib.isEmpty(statistics)) {
 			throw new DataNotFoundException("No statistics retrieved");
 		}
